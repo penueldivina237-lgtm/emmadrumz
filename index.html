@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divine Emmanuel | Professional Drummer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #0d0d0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: #f5f5f5;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.78)),
+        url('image2.jpg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(6px);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+      padding: 60px 0;
+    }
+
+    .hero-text h1 {
+      font-size: 3.4rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .hero-text h2 {
+      font-size: 1.1rem;
+      color: #d4af37;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      color: #e6e6e6;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: #f0cb57;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+    }
+
+    .btn-outline:hover {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(17, 17, 17, 0.82);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+    }
+
+    .hero-card img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      max-height: 620px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-dark {
+      background: #121212;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #d4af37;
+      font-size: 2.2rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+      color: #d8d8d8;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: #181818;
+      padding: 30px;
+      border-left: 4px solid #d4af37;
+      border-radius: 8px;
+    }
+
+    .about-box p {
+      margin-bottom: 16px;
+      color: #e2e2e2;
+    }
+
+    .about-image img {
+      border-radius: 10px;
+      max-height: 500px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: #191919;
+      padding: 28px 22px;
+      border-radius: 10px;
+      border-top: 3px solid #d4af37;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .service-card p {
+      color: #d9d9d9;
+      font-size: 0.97rem;
+    }
+
+    .rate-section {
+      text-align: center;
+    }
+
+    .rate-box {
+      display: inline-block;
+      background: #1a1a1a;
+      padding: 30px 40px;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      margin-top: 20px;
+      min-width: 300px;
+    }
+
+    .rate-box h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .rate-price {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .rate-note {
+      color: #d7d7d7;
+      font-size: 0.95rem;
+    }
+
+    .flyer-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: stretch;
+      background: #111;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .flyer-image {
+      background: #000;
+    }
+
+    .flyer-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 580px;
+    }
+
+    .flyer-text {
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.95)),
+        url('image2.jpg') center/cover no-repeat;
+    }
+
+    .flyer-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .flyer-text .tag {
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .flyer-text p {
+      color: #e4e4e4;
+      margin-bottom: 18px;
+    }
+
+    .flyer-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .flyer-list li {
+      margin-bottom: 10px;
+      padding-left: 18px;
+      position: relative;
+      color: #f2f2f2;
+    }
+
+    .flyer-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #d4af37;
+    }
+
+    .flyer-rate {
+      margin: 20px 0;
+      padding: 18px 20px;
+      background: rgba(212,175,55,0.08);
+      border-left: 4px solid #d4af37;
+    }
+
+    .flyer-rate strong {
+      color: #d4af37;
+      font-size: 1.1rem;
+    }
+
+    .contact-lines p {
+      margin-bottom: 8px;
+      color: #f0f0f0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      border-radius: 12px;
+      height: 420px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .booking-box {
+      max-width: 760px;
+      margin: auto;
+      background: #181818;
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .booking-form input,
+    .booking-form textarea,
+    .booking-form select {
+      width: 100%;
+      padding: 14px;
+      background: #101010;
+      border: 1px solid #2e2e2e;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .booking-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .total {
+      padding: 14px;
+      background: #0f0f0f;
+      border-left: 4px solid #d4af37;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .contact-center {
+      text-align: center;
+    }
+
+    .contact-center p {
+      margin-bottom: 10px;
+      color: #e2e2e2;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      background: #080808;
+      padding: 24px 0;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 950px) {
+      .hero-content,
+      .about-grid,
+      .flyer-wrap,
+      .services-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .flyer-image img {
+        min-height: 360px;
+      }
+
+      .flyer-text {
+        padding: 35px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .rate-price {
+        font-size: 2.2rem;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Additional responsive tweaks for tablet and small phones */
+    @media (max-width: 900px) {
+      .hero-content,
+      .about-grid,
+      .flyer-wrap,
+      .services-grid,
+      .gallery-grid,
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { min-height: auto; padding: 40px 0; }
+
+      .hero-card img, .about-image img, .flyer-image img, .gallery-grid img { max-height: 420px; height: auto; object-fit: cover; }
+
+      .booking-box, .flyer-text { padding: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 1.6rem; }
+      .hero-text p, .section-subtitle { font-size: 0.95rem; }
+      .btn { width: 100%; }
+      .booking-box { padding: 16px; }
+      .booking-form input, .booking-form textarea, .booking-form select { padding: 12px; font-size: 0.95rem; }
+      .gallery-grid img { height: auto; }
+      .rate-price { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">DIVINE EMMANUEL</div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#flyer">Flyer</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+        <a href="inside.html">insides</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Professional Drummer</h2>
+        <h1>Reliable Drumming Services for Churches, Events & Studio Sessions</h1>
+        <p>
+          I am Divine Emmanuel, a professional drummer based in Hamilton, Ontario,
+          Canada, with over 15 years of experience. I provide quality drumming
+          services for church services, rehearsals, worship gatherings, live events,
+          and studio sessions.
+        </p>
+        <div class="btn-group">
+          <a href="#booking" class="btn btn-primary">Book My Service</a>
+          <a href="#flyer" class="btn btn-outline">View Flyer</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="image1.jpeg" alt="Divine Emmanuel professional portrait" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-dark">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        Professional, dependable, and experienced drumming support for churches,
+        worship teams, event organizers, and music projects.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-box">
+          <p>
+            I am a passionate drummer with over 15 years of experience serving in
+            church environments, live performances, rehearsals, and studio sessions.
+          </p>
+          <p>
+            My goal is to bring excellence, rhythm, energy, and musical sensitivity
+            to every assignment. Whether it is a worship service, music rehearsal,
+            conference, concert, or recording, I focus on delivering professional support.
+          </p>
+          <p>
+            I am available for bookings across Hamilton, Ontario, and surrounding areas.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="image3.jpeg" alt="Divine Emmanuel playing drums" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-subtitle">
+        Flexible drumming services tailored for churches, live events, rehearsals, and studio work.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Church Services</h3>
+          <p>
+            Available for Sunday services, midweek services, worship nights, revivals,
+            conferences, and special church programs.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Rehearsals</h3>
+          <p>
+            Available to rehearse with church bands, choirs, worship teams,
+            and music groups before services or events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Live Events</h3>
+          <p>
+            Professional drumming support for ceremonies, concerts, conventions,
+            worship programs, and special occasions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Studio Sessions</h3>
+          <p>
+            Session drumming for recordings, projects, live music preparation,
+            and other professional music needs.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Worship Gatherings</h3>
+          <p>
+            Excellent support for praise sessions, worship meetings,
+            church ministrations, and spiritual events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Special Bookings</h3>
+          <p>
+            Available for custom requests based on event type, duration,
+            location, and musical requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark rate-section">
+    <div class="container">
+      <h2 class="section-title">Rates</h2>
+      <p class="section-subtitle">
+        Simple and professional pricing for bookings.
+      </p>
+
+      <div class="rate-box">
+        <h3>Hourly Rate</h3>
+        <div class="rate-price">$75/hour</div>
+        <p class="rate-note">
+          Minimum booking: 2 hours. Travel or special event requirements may affect final pricing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="flyer">
+    <div class="container">
+      <h2 class="section-title">Promotional Flyer</h2>
+      <p class="section-subtitle">
+        A clean promotional section you can also screenshot or reuse for social media and bookings.
+      </p>
+
+      <div class="flyer-wrap">
+        <div class="flyer-image">
+          <img src="image1.jpeg" alt="Divine Emmanuel flyer portrait" />
+        </div>
+
+        <div class="flyer-text">
+          <div class="tag">15+ Years Experience</div>
+          <h2>Divine Emmanuel</h2>
+          <p>
+            Professional drumming services for churches, worship teams, events,
+            and studio sessions in Hamilton, Ontario, Canada.
+          </p>
+
+          <ul class="flyer-list">
+            <li>Church Services</li>
+            <li>Rehearsals</li>
+            <li>Worship Nights</li>
+            <li>Live Events</li>
+            <li>Studio Sessions</li>
+            <li>Special Programs</li>
+          </ul>
+
+          <div class="flyer-rate">
+            <strong>Hourly Rate: $75/hour</strong><br />
+            Minimum Booking: 2 hours
+          </div>
+
+          <div class="contact-lines">
+            <p><strong>Location:</strong> Hamilton, ON, Canada</p>
+            <p><strong>Phone / WhatsApp:</strong> +1 (365) 384-5983</p>
+            <p><strong>Email:</strong> divineemmanuel214@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section-dark">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-subtitle">
+        A few moments from my professional music journey.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="image2.jpeg" alt="Divine Emmanuel in drum store" />
+        <img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" />
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="container">
+      <h2 class="section-title">Book My Service</h2>
+      <p class="section-subtitle">
+        Submit your booking request below. Estimated cost updates automatically.
+      </p>
+
+      <div class="booking-box">
+        <form class="booking-form" id="bookingForm">
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="email" id="email" placeholder="Email Address" required />
+          <input type="text" id="organization" placeholder="Church / Organization / Event Name" />
+          <input type="date" id="date" required />
+
+          <select id="serviceType">
+            <option value="Church Service">Church Service</option>
+            <option value="Rehearsal">Rehearsal</option>
+            <option value="Live Event">Live Event</option>
+            <option value="Studio Session">Studio Session</option>
+            <option value="Special Booking">Special Booking</option>
+          </select>
+
+          <input type="number" id="hours" min="2" value="2" required />
+          <textarea id="message" placeholder="Tell me about your event, rehearsal, or service..."></textarea>
+
+          <div class="total" id="totalCost">Estimated Total: $150</div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;">
+            <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+            <button type="button" id="payButton" class="btn btn-primary">Book & Pay</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-dark">
+    <div class="container contact-center">
+      <h2 class="section-title">Contact</h2>
+      <p><strong>Email:</strong> divineemmanuel214@gmail.com</p>
+      <p><strong>Phone / WhatsApp:</strong> +1 (365) 384-5983</p>
+      <p><strong>Location:</strong> Hamilton, ON, Canada</p>
+      <p>Available for bookings from churches, worship teams, event organizers, and artists.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Divine Emmanuel. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const hourlyRate = 75;
+    // Stripe Payment Link (created in your Stripe Dashboard)
+    const PAYMENT_LINK_URL = 'https://buy.stripe.com/5kQ9ASgRB19370v7O96c000';
+
+    const hoursInput = document.getElementById("hours");
+    const totalCost = document.getElementById("totalCost");
+    const bookingForm = document.getElementById("bookingForm");
+    const payButton = document.getElementById('payButton');
+
+    function updateTotal() {
+      const hours = parseInt(hoursInput.value) || 2;
+      const total = hours * hourlyRate;
+      totalCost.textContent = `Estimated Total: $${total}`;
+    }
+
+    function gatherBookingData() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const organization = document.getElementById("organization").value.trim();
+      const date = document.getElementById("date").value;
+      const serviceType = document.getElementById("serviceType").value;
+      const hours = parseInt(document.getElementById("hours").value) || 2;
+      const message = document.getElementById("message").value.trim();
+      const total = hours * hourlyRate;
+      return { name, email, organization, date, serviceType, hours, message, total };
+    }
+
+    hoursInput.addEventListener("input", updateTotal);
+
+    bookingForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = gatherBookingData();
+
+      alert(
+        `Booking Request Submitted\n\nName: ${data.name}\nEmail: ${data.email}\nOrganization: ${data.organization}\nDate: ${data.date}\nService: ${data.serviceType}\nHours: ${data.hours}\nEstimated Total: $${data.total}\n\nMessage: ${data.message}`
+      );
+
+      bookingForm.reset();
+      document.getElementById("hours").value = 2;
+      updateTotal();
+    });
+
+    payButton.addEventListener('click', async function(e) {
+      e.preventDefault();
+      const data = gatherBookingData();
+
+      try {
+        // create booking record on server
+        const r1 = await fetch('/bookings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const j1 = await r1.json();
+        if (!j1.id) throw new Error('failed to create booking');
+
+        // create checkout session for the booking
+        const r2 = await fetch('/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bookingId: j1.id }) });
+        const j2 = await r2.json();
+        if (!j2.url) throw new Error('failed to create checkout session');
+
+        // redirect browser to Stripe Checkout
+        window.location = j2.url;
+      } catch (err) {
+        console.error(err);
+        alert('Could not start payment. See console for details.');
+      }
+    });
+
+    updateTotal();
+  </script>
+</body>
+</html>
