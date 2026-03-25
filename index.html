@@ -1074,9 +1074,19 @@
     </svg>
   </a>
   <style>
-    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:transparent; width:54px; height:54px; display:none; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(0,0,0,0.35); z-index:4000; text-decoration:none; }
-    .whatsapp-float svg { display:block; }
-    @media (prefers-reduced-motion: reduce){ .whatsapp-float { transition:none; } }
+    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:#25D366; width:60px; height:60px; display:flex; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(37,211,102,0.22); z-index:4000; text-decoration:none; border:4px solid rgba(255,255,255,0.06); }
+    .whatsapp-float svg { display:block; width:28px; height:28px; }
+    .whatsapp-float svg * { fill: #fff !important; }
+
+    /* pulsing ring */
+    .whatsapp-float::before{ content:''; position:absolute; right:10px; bottom:10px; width:76px; height:76px; border-radius:50%; background:rgba(37,211,102,0.14); z-index:3998; animation: wa-pulse 1.8s infinite; }
+    @keyframes wa-pulse{ 0%{transform:scale(0.9);opacity:0.6}50%{transform:scale(1.18);opacity:0.18}100%{transform:scale(0.9);opacity:0.6}}
+
+    /* subtle vibration */
+    @keyframes wa-vibrate{ 0%{transform:translateX(0)}20%{transform:translateX(-1.8px)}40%{transform:translateX(1.8px)}60%{transform:translateX(-1.2px)}80%{transform:translateX(1.2px)}100%{transform:translateX(0)} }
+    .whatsapp-float > svg { animation: wa-vibrate 1.6s infinite; }
+
+    @media (prefers-reduced-motion: reduce){ .whatsapp-float::before, .whatsapp-float > svg { animation:none; } }
   </style>
   <script>
     try {
