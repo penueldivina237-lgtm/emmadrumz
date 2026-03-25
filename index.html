@@ -618,6 +618,9 @@
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to main content</a>
+  <style>
+    .sr-only { position: absolute !important; width: 1px; height: 1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  </style>
 
   <header>
     <div class="container nav">
@@ -654,7 +657,7 @@
       </div>
 
       <div class="hero-card">
-        <img src="image1.jpeg" alt="Divine Emmanuel professional portrait" />
+        <img src="image1.jpeg" alt="Divine Emmanuel professional portrait" loading="lazy" />
       </div>
     </div>
   </section>
@@ -684,7 +687,7 @@
         </div>
 
         <div class="about-image">
-          <img src="image3.jpeg" alt="Divine Emmanuel playing drums" />
+          <img src="image3.jpeg" alt="Divine Emmanuel playing drums" loading="lazy" />
         </div>
       </div>
     </div>
@@ -775,7 +778,7 @@
 
       <div class="flyer-wrap">
         <div class="flyer-image">
-          <img src="image1.jpeg" alt="Divine Emmanuel flyer portrait" />
+          <img src="image1.jpeg" alt="Divine Emmanuel flyer portrait" loading="lazy" />
         </div>
 
         <div class="flyer-text">
@@ -818,11 +821,11 @@
       </p>
 
       <div class="gallery-grid">
-        <img src="image2.jpeg" alt="Divine Emmanuel in drum store" />
-        <img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" />
-          <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" /></a>
-          <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" /></a>
-          <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" /></a>
+        <img src="image2.jpeg" alt="Divine Emmanuel in drum store" loading="lazy" />
+        <img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" loading="lazy" />
+        <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" loading="lazy" /></a>
     </div>
   </section>
 
@@ -835,12 +838,17 @@
 
       <div class="booking-box">
         <form class="booking-form" id="bookingForm">
-            <input type="text" id="name" placeholder="Full Name" aria-label="Full name" required />
-            <input type="email" id="email" placeholder="Email Address" aria-label="Email address" required />
-            <input type="text" id="organization" placeholder="Church / Organization / Event Name" aria-label="Organization or event name" />
-            <input type="date" id="date" aria-label="Booking date" required />
+          <label class="sr-only" for="name">Full name</label>
+          <input type="text" id="name" placeholder="Full Name" aria-label="Full name" required />
+          <label class="sr-only" for="email">Email address</label>
+          <input type="email" id="email" placeholder="Email Address" aria-label="Email address" required />
+          <label class="sr-only" for="organization">Organization or event name</label>
+          <input type="text" id="organization" placeholder="Church / Organization / Event Name" aria-label="Organization or event name" />
+          <label class="sr-only" for="date">Booking date</label>
+          <input type="date" id="date" aria-label="Booking date" required />
 
-          <select id="serviceType" aria-label="Service type">
+            <label class="sr-only" for="serviceType">Service type</label>
+            <select id="serviceType" aria-label="Service type">
             <option value="Church Service">Church Service</option>
             <option value="Rehearsal">Rehearsal</option>
             <option value="Live Event">Live Event</option>
@@ -848,7 +856,9 @@
             <option value="Special Booking">Special Booking</option>
           </select>
 
+            <label class="sr-only" for="hours">Number of hours</label>
             <input type="number" id="hours" min="2" value="2" aria-label="Number of hours" required />
+            <label class="sr-only" for="message">Booking message</label>
             <textarea id="message" placeholder="Tell me about your event, rehearsal, or service..." aria-label="Booking message"></textarea>
 
           <div class="total" id="totalCost">Estimated Total: $150</div>
@@ -1064,9 +1074,17 @@
     </svg>
   </a>
   <style>
-    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:transparent; width:54px; height:54px; display:flex; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(0,0,0,0.35); z-index:4000; text-decoration:none; }
+    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:transparent; width:54px; height:54px; display:none; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(0,0,0,0.35); z-index:4000; text-decoration:none; }
     .whatsapp-float svg { display:block; }
     @media (prefers-reduced-motion: reduce){ .whatsapp-float { transition:none; } }
   </style>
+  <script>
+    try {
+      const wa = document.getElementById('whatsappFloat');
+      const consent = localStorage.getItem('analyticsConsent');
+      if (consent === 'granted' && wa) wa.style.display = 'flex';
+      window.addEventListener('storage', function(ev){ if (ev.key === 'analyticsConsent' && ev.newValue === 'granted' && wa) wa.style.display = 'flex'; });
+    } catch (e) {}
+  </script>
 </body>
 </html>

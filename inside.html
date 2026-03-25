@@ -743,12 +743,12 @@
       </p>
 
       <div class="gallery-grid">
-        <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" /></a>
-        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" /></a>
-        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel on yellow drum set" /></a>
-        <a class="gallery-link" href="video.html#video4" title="Watch video 4"><img src="image7.jpeg" alt="Divine Emmanuel with cymbals display" /></a>
-        <a class="gallery-link" href="video.html#video5" title="Watch video 5"><img src="image5.jpeg" alt="Professional portrait of Divine Emmanuel" /></a>
-        <a class="gallery-link" href="video.html#video6" title="Watch video 6"><img src="image6.jpeg" alt="Divine Emmanuel playing drums professionally" /></a>
+        <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel on yellow drum set" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video4" title="Watch video 4"><img src="image7.jpeg" alt="Divine Emmanuel with cymbals display" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video5" title="Watch video 5"><img src="image5.jpeg" alt="Professional portrait of Divine Emmanuel" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video6" title="Watch video 6"><img src="image6.jpeg" alt="Divine Emmanuel playing drums professionally" loading="lazy" /></a>
       </div>
     </div>
   </section>
@@ -763,11 +763,16 @@
       <div class="booking-layout">
         <div class="booking-box">
           <form class="booking-form" id="bookingForm">
+              <label class="sr-only" for="name">Full name</label>
               <input type="text" id="name" placeholder="Full Name" aria-label="Full name" required />
+              <label class="sr-only" for="email">Email address</label>
               <input type="email" id="email" placeholder="Email Address" aria-label="Email address" required />
+              <label class="sr-only" for="organization">Organization or event name</label>
               <input type="text" id="organization" placeholder="Church / Organization / Event Name" aria-label="Organization or event name" />
+              <label class="sr-only" for="date">Booking date</label>
               <input type="date" id="date" aria-label="Booking date" required />
 
+            <label class="sr-only" for="serviceType">Service type</label>
             <select id="serviceType" aria-label="Service type">
               <option value="Church Service">Church Service</option>
               <option value="Rehearsal">Rehearsal</option>
@@ -777,7 +782,9 @@
               <option value="Special Booking">Special Booking</option>
             </select>
 
+            <label class="sr-only" for="hours">Number of hours</label>
             <input type="number" id="hours" min="2" value="2" aria-label="Number of hours" required />
+            <label class="sr-only" for="message">Booking message</label>
             <textarea id="message" placeholder="Tell me more about the booking..." aria-label="Booking message"></textarea>
 
             <div class="estimate-box" id="estimateBox">Estimated Total: $150</div>
@@ -1012,9 +1019,17 @@
     </svg>
   </a>
   <style>
-    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:transparent; width:54px; height:54px; display:flex; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(0,0,0,0.35); z-index:4000; text-decoration:none; }
+    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:transparent; width:54px; height:54px; display:none; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(0,0,0,0.35); z-index:4000; text-decoration:none; }
     .whatsapp-float svg { display:block; }
     @media (prefers-reduced-motion: reduce){ .whatsapp-float { transition:none; } }
   </style>
+  <script>
+    try {
+      const wa = document.getElementById('whatsappFloat');
+      const consent = localStorage.getItem('analyticsConsent');
+      if (consent === 'granted' && wa) wa.style.display = 'flex';
+      window.addEventListener('storage', function(ev){ if (ev.key === 'analyticsConsent' && ev.newValue === 'granted' && wa) wa.style.display = 'flex'; });
+    } catch (e) {}
+  </script>
 </body>
 </html>
