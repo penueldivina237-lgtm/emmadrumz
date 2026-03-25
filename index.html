@@ -917,5 +917,74 @@
   <script>
     AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic', offset: 120 });
   </script>
+  <!-- Video modal -->
+  <div id="videoModal" class="video-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-action="close"></div>
+    <div class="video-modal-content" role="dialog" aria-modal="true">
+      <button class="video-modal-close" aria-label="Close video">✕</button>
+      <div id="videoModalPlayer" class="video-modal-player"></div>
+    </div>
+  </div>
+  <style>
+    .video-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:2000; }
+    .video-modal.show { display:flex; }
+    .video-modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.75); }
+    .video-modal-content { position:relative; width:92%; max-width:980px; background:transparent; border-radius:8px; z-index:2; }
+    .video-modal-player iframe, .video-modal-player video { width:100%; height:60vh; border-radius:6px; }
+    .video-modal-close { position:absolute; right:-6px; top:-28px; background:#111; color:#fff; border:0; padding:8px 10px; border-radius:20px; cursor:pointer; font-size:14px; z-index:3; }
+    @media (max-width:600px){ .video-modal-player iframe, .video-modal-player video { height:52vh; } }
+  </style>
+
+  <script>
+    (function(){
+      const videoMap = {
+        video1: 'https://www.youtube.com/embed/VIDEO_ID_1',
+        video2: 'https://www.youtube.com/embed/VIDEO_ID_2',
+        video3: 'https://www.youtube.com/embed/VIDEO_ID_3',
+      };
+
+      const modal = document.getElementById('videoModal');
+      const player = document.getElementById('videoModalPlayer');
+      const closeBtn = modal.querySelector('.video-modal-close');
+
+      function openModal(key) {
+        const src = videoMap[key];
+        if (!src) return;
+        player.innerHTML = '';
+        const iframe = document.createElement('iframe');
+        iframe.src = src + '?rel=0&autoplay=1';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        player.appendChild(iframe);
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal(){
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden','true');
+        player.innerHTML = '';
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function(e){
+        const a = e.target.closest('.gallery-link');
+        if (!a) return;
+        e.preventDefault();
+        // href may be video.html#video1 or just a hash
+        const href = a.getAttribute('href') || '';
+        const hash = href.includes('#') ? href.split('#')[1] : a.dataset.video;
+        if (hash) openModal(hash);
+      });
+
+      modal.addEventListener('click', function(e){
+        if (e.target.dataset.action === 'close' || e.target === closeBtn) closeModal();
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
 </body>
 </html>
