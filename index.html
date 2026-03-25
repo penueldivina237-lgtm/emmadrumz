@@ -524,6 +524,35 @@
       .gallery-grid img { height: auto; }
       .rate-price { font-size: 1.8rem; }
     }
+
+    /* Animation helpers */
+    .fade-img {
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      opacity: 1;
+      will-change: opacity, transform;
+    }
+
+    .fade-img.hidden {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+
+    .gallery-grid img {
+      opacity: 0.92;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      transform: translateY(6px);
+    }
+
+    .gallery-grid img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn {
+      transition: transform 0.14s ease, box-shadow 0.14s ease;
+    }
+
+    .btn:active { transform: translateY(1px) scale(0.995); }
   </style>
 </head>
 <body>
@@ -842,6 +871,43 @@
     });
 
     updateTotal();
+  </script>
+  <script>
+    // Hero carousel + gallery fade-in for smoother mobile experience
+    (function() {
+      // Hero carousel
+      const heroImg = document.querySelector('.hero-card img');
+      const heroImages = ['image1.jpeg','image2.jpeg','image3.jpeg','image7.jpeg'];
+      let hi = 0;
+      if (heroImg) {
+        heroImg.classList.add('fade-img');
+        setInterval(() => {
+          // only animate on small screens for performance
+          if (window.innerWidth > 1200) return;
+          heroImg.classList.add('hidden');
+          setTimeout(() => {
+            hi = (hi + 1) % heroImages.length;
+            heroImg.src = heroImages[hi];
+            heroImg.classList.remove('hidden');
+          }, 450);
+        }, 4500);
+      }
+
+      // Gallery fade-in using IntersectionObserver
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.gallery-grid img').forEach(img => {
+        img.classList.add('fade-img');
+        io.observe(img);
+      });
+    })();
   </script>
 </body>
 </html>
