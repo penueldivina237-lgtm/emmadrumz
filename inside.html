@@ -785,24 +785,18 @@
       updateEstimate();
     });
 
-    payButton.addEventListener('click', async function(e) {
+    payButton.addEventListener('click', function(e) {
       e.preventDefault();
       const data = gatherBookingData();
 
       try {
-        const r1 = await fetch('/bookings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-        const j1 = await r1.json();
-        if (!j1.id) throw new Error('failed to create booking');
-
-        const r2 = await fetch('/create-checkout-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bookingId: j1.id }) });
-        const j2 = await r2.json();
-        if (!j2.url) throw new Error('failed to create checkout session');
-
-        window.location = j2.url;
+        localStorage.setItem('pendingBooking', JSON.stringify(data));
       } catch (err) {
-        console.error(err);
-        alert('Could not start payment. See console for details.');
+        // ignore storage errors
       }
+
+      // Open the Stripe Payment Link in a new tab
+      window.open(PAYMENT_LINK_URL, '_blank');
     });
 
     updateEstimate();
