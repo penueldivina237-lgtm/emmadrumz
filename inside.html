@@ -529,6 +529,8 @@
 
     .btn:active { transform: translateY(1px) scale(0.995); }
   </style>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -684,12 +686,12 @@
       </p>
 
       <div class="gallery-grid">
-        <img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" />
-        <img src="image2.jpeg" alt="Divine Emmanuel in drum store" />
-        <img src="image3.jpeg" alt="Divine Emmanuel on yellow drum set" />
-        <img src="image7.jpeg" alt="Divine Emmanuel with cymbals display" />
-        <img src="image5.jpeg" alt="Professional portrait of Divine Emmanuel" />
-        <img src="image6.jpeg" alt="Divine Emmanuel playing drums professionally" />
+        <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" /></a>
+        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" /></a>
+        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel on yellow drum set" /></a>
+        <a class="gallery-link" href="video.html#video4" title="Watch video 4"><img src="image7.jpeg" alt="Divine Emmanuel with cymbals display" /></a>
+        <a class="gallery-link" href="video.html#video5" title="Watch video 5"><img src="image5.jpeg" alt="Professional portrait of Divine Emmanuel" /></a>
+        <a class="gallery-link" href="video.html#video6" title="Watch video 6"><img src="image6.jpeg" alt="Divine Emmanuel playing drums professionally" /></a>
       </div>
     </div>
   </section>
@@ -863,6 +865,10 @@
         io.observe(img);
       });
     })();
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic', offset: 120 });
   </script>
 </body>
 </html>

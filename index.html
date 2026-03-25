@@ -554,6 +554,8 @@
 
     .btn:active { transform: translateY(1px) scale(0.995); }
   </style>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -568,12 +570,12 @@
         <a href="#gallery">Gallery</a>
         <a href="#booking">Booking</a>
         <a href="#contact">Contact</a>
-        <a href="inside.html">insides</a>
+        <a href="inside.html">Inside</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero" id="home">
+  <section class="hero" id="home" data-aos="fade-left" data-aos-once="true">
     <div class="container hero-content">
       <div class="hero-text">
         <h2>Professional Drummer</h2>
@@ -596,7 +598,7 @@
     </div>
   </section>
 
-  <section id="about" class="section-dark">
+  <section id="about" class="section-dark" data-aos="fade-left" data-aos-once="true">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <p class="section-subtitle">
@@ -627,7 +629,7 @@
     </div>
   </section>
 
-  <section id="services">
+  <section id="services" data-aos="fade-left" data-aos-once="true">
     <div class="container">
       <h2 class="section-title">Services</h2>
       <p class="section-subtitle">
@@ -686,7 +688,7 @@
     </div>
   </section>
 
-  <section class="section-dark rate-section">
+  <section class="section-dark rate-section" data-aos="fade-left" data-aos-once="true">
     <div class="container">
       <h2 class="section-title">Rates</h2>
       <p class="section-subtitle">
@@ -703,7 +705,7 @@
     </div>
   </section>
 
-  <section id="flyer">
+  <section id="flyer" data-aos="fade-left" data-aos-once="true">
     <div class="container">
       <h2 class="section-title">Promotional Flyer</h2>
       <p class="section-subtitle">
@@ -747,7 +749,7 @@
     </div>
   </section>
 
-  <section id="gallery" class="section-dark">
+  <section id="gallery" class="section-dark" data-aos="fade-left" data-aos-once="true">
     <div class="container">
       <h2 class="section-title">Gallery</h2>
       <p class="section-subtitle">
@@ -757,11 +759,13 @@
       <div class="gallery-grid">
         <img src="image2.jpeg" alt="Divine Emmanuel in drum store" />
         <img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" />
-      </div>
+          <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" /></a>
+          <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" /></a>
+          <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" /></a>
     </div>
   </section>
 
-  <section id="booking">
+  <section id="booking" data-aos="fade-left" data-aos-once="true">
     <div class="container">
       <h2 class="section-title">Book My Service</h2>
       <p class="section-subtitle">
@@ -797,7 +801,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section-dark">
+  <section id="contact" class="section-dark" data-aos="fade-left" data-aos-once="true">
     <div class="container contact-center">
       <h2 class="section-title">Contact</h2>
       <p><strong>Email:</strong> divineemmanuel214@gmail.com</p>
@@ -908,6 +912,10 @@
         io.observe(img);
       });
     })();
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic', offset: 120 });
   </script>
 </body>
 </html>
