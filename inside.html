@@ -453,6 +453,9 @@
         width: 100%;
         text-align: center;
       }
+      /* Reduce hero verbosity on small screens */
+      .hero-text .hero-full { display: none; }
+      .hero-text .hero-brief { display: block; font-size: 0.98rem; color: #e6e6e6; margin-bottom: 14px; }
     }
 
     /* Additional responsive tweaks for tablet and small phones */
@@ -553,11 +556,12 @@
       <div class="hero-text">
         <div class="sub">Inside The Sound</div>
         <h1>A deeper look into my drumming journey, professionalism, and excellence.</h1>
-        <p>
+        <p class="hero-full">
           Welcome to the inside page — a more personal and premium look at my work,
           experience, musical style, and booking options. Built for churches, worship teams,
           event organizers, and anyone looking for dependable drumming support.
         </p>
+        <p class="hero-brief" style="display:none;">A concise look at my drumming, experience, and booking options.</p>
         <div class="btn-group">
           <a href="#booking" class="btn btn-primary">Book My Service</a>
           <a href="#gallery" class="btn btn-outline">View Gallery</a>

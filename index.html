@@ -495,6 +495,9 @@
         width: 100%;
         text-align: center;
       }
+      /* Reduce blocks of text in the hero on small screens */
+      .hero-text .hero-full { display: none; }
+      .hero-text .hero-brief { display: block; font-size: 0.98rem; color: #e6e6e6; margin-bottom: 14px; }
     }
 
     /* Additional responsive tweaks for tablet and small phones */
@@ -580,12 +583,13 @@
       <div class="hero-text">
         <h2>Professional Drummer</h2>
         <h1>Reliable Drumming Services for Churches, Events & Studio Sessions</h1>
-        <p>
+        <p class="hero-full">
           I am Divine Emmanuel, a professional drummer based in Hamilton, Ontario,
           Canada, with over 15 years of experience. I provide quality drumming
           services for church services, rehearsals, worship gatherings, live events,
           and studio sessions.
         </p>
+        <p class="hero-brief" style="display:none;">Professional drummer for church services, events, and studio sessions.</p>
         <div class="btn-group">
           <a href="#booking" class="btn btn-primary">Book My Service</a>
           <a href="#flyer" class="btn btn-outline">View Flyer</a>
