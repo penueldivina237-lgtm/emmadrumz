@@ -532,10 +532,63 @@
 
     .btn:active { transform: translateY(1px) scale(0.995); }
   </style>
+
+  <!-- Cookie consent + analytics loader -->
+  <div id="cookieConsent" class="cookie-consent" aria-live="polite" style="display:none;">
+    <div class="cookie-text">We use analytics to improve the site. Accept tracking?</div>
+    <div class="cookie-actions">
+      <button id="acceptAnalytics" class="btn btn-primary">Accept</button>
+      <button id="declineAnalytics" class="btn btn-outline">Decline</button>
+    </div>
+  </div>
+  <style>
+    .cookie-consent { position:fixed; right:12px; bottom:12px; background:#111; color:#fff; padding:12px 14px; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:3000; display:flex; gap:10px; align-items:center; }
+    .cookie-text { margin-right:8px; }
+    .skip-link{position:absolute;left:8px;top:8px;background:#111;color:#fff;padding:8px 12px;border-radius:6px;z-index:1500;transform:translateY(-120%);transition:transform .18s}
+    .skip-link:focus{transform:translateY(0);}
+  </style>
+  <script>
+    (function(){
+      function loadAnalytics() {
+        if (window._analyticsLoaded) return;
+        window._analyticsLoaded = true;
+        const id = 'G-XXXXXXXXXX';
+        const s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        s.async = true; document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', id, { anonymize_ip: true });
+      }
+
+      const consent = localStorage.getItem('analyticsConsent');
+      const banner = document.getElementById('cookieConsent');
+      if (consent === 'granted') { loadAnalytics(); }
+      else if (consent === 'declined') { /* do nothing */ }
+      else { banner.style.display = 'flex'; }
+
+      document.getElementById('acceptAnalytics')?.addEventListener('click', function(){
+        localStorage.setItem('analyticsConsent','granted'); loadAnalytics(); banner.style.display = 'none';
+      });
+
+      document.getElementById('declineAnalytics')?.addEventListener('click', function(){
+        localStorage.setItem('analyticsConsent','declined'); banner.style.display = 'none';
+      });
+    })();
+  </script>
   <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- SEO & Social -->
+  <meta name="description" content="Inside — Divine Emmanuel. A closer look at professional drumming services and booking options.">
+  <link rel="canonical" href="https://yourdomain.example.com/inside.html">
+  <meta property="og:title" content="Inside | Divine Emmanuel">
+  <meta property="og:description" content="A deeper look into my drumming journey, professionalism, and booking options.">
+  <meta property="og:image" content="image1.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+  <a class="skip-link" href="#story">Skip to main content</a>
 
   <header>
     <div class="container nav">
@@ -710,12 +763,12 @@
       <div class="booking-layout">
         <div class="booking-box">
           <form class="booking-form" id="bookingForm">
-            <input type="text" id="name" placeholder="Full Name" required />
-            <input type="email" id="email" placeholder="Email Address" required />
-            <input type="text" id="organization" placeholder="Church / Organization / Event Name" />
-            <input type="date" id="date" required />
+              <input type="text" id="name" placeholder="Full Name" aria-label="Full name" required />
+              <input type="email" id="email" placeholder="Email Address" aria-label="Email address" required />
+              <input type="text" id="organization" placeholder="Church / Organization / Event Name" aria-label="Organization or event name" />
+              <input type="date" id="date" aria-label="Booking date" required />
 
-            <select id="serviceType">
+            <select id="serviceType" aria-label="Service type">
               <option value="Church Service">Church Service</option>
               <option value="Rehearsal">Rehearsal</option>
               <option value="Worship Event">Worship Event</option>
@@ -724,8 +777,8 @@
               <option value="Special Booking">Special Booking</option>
             </select>
 
-            <input type="number" id="hours" min="2" value="2" required />
-            <textarea id="message" placeholder="Tell me more about the booking..."></textarea>
+            <input type="number" id="hours" min="2" value="2" aria-label="Number of hours" required />
+            <textarea id="message" placeholder="Tell me more about the booking..." aria-label="Booking message"></textarea>
 
             <div class="estimate-box" id="estimateBox">Estimated Total: $150</div>
 
@@ -877,7 +930,7 @@
   <!-- Video modal -->
   <div id="videoModal" class="video-modal" aria-hidden="true">
     <div class="video-modal-backdrop" data-action="close"></div>
-    <div class="video-modal-content" role="dialog" aria-modal="true">
+    <div class="video-modal-content" role="dialog" aria-modal="true" tabindex="-1">
       <button class="video-modal-close" aria-label="Close video">✕</button>
       <div id="videoModalPlayer" class="video-modal-player"></div>
     </div>
@@ -907,9 +960,11 @@
       const player = document.getElementById('videoModalPlayer');
       const closeBtn = modal.querySelector('.video-modal-close');
 
+      let _lastFocus = null;
       function openModal(key) {
         const src = videoMap[key];
         if (!src) return;
+        _lastFocus = document.activeElement;
         player.innerHTML = '';
         const iframe = document.createElement('iframe');
         iframe.src = src + '?rel=0&autoplay=1';
@@ -919,6 +974,8 @@
         modal.classList.add('show');
         modal.setAttribute('aria-hidden','false');
         document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('.video-modal-close');
+        if (closeBtn) closeBtn.focus();
       }
 
       function closeModal(){
@@ -926,6 +983,8 @@
         modal.setAttribute('aria-hidden','true');
         player.innerHTML = '';
         document.body.style.overflow = '';
+        if (_lastFocus && typeof _lastFocus.focus === 'function') _lastFocus.focus();
+        _lastFocus = null;
       }
 
       document.addEventListener('click', function(e){
