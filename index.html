@@ -680,7 +680,7 @@
       </div>
 
       <div class="hero-card">
-        <img src="image1.jpeg" alt="Divine Emmanuel professional portrait" loading="lazy" />
+        <img src="image1.jpeg" alt="Divine Emmanuel Success Coach" loading="lazy" />
       </div>
     </div>
   </section>
@@ -709,7 +709,7 @@
         </div>
 
         <div class="about-image">
-          <img src="Image_06.png" alt="Divine Emmanuel Coaching" loading="lazy" />
+          <img src="image2.jpeg" alt="Divine Emmanuel Coaching" loading="lazy" />
         </div>
       </div>
     </div>
@@ -840,12 +840,11 @@
       </p>
 
       <div class="gallery-grid">
-         <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="Image_02.png" alt="Formal portrait of Divine Emmanuel" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image_04.png" alt="Divine Emmanuel in drum store" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="Image_06.png" alt="Divine Emmanuel at yellow drum set" loading="lazy" /></a>
-        <img src="Image_05.png" alt="Divine Emmanuel in drum store" loading="lazy" />
-        <img src="image9.png" alt="Divine Emmanuel at yellow drum set" loading="lazy" />
-       
+        <img src="Image_06.png" alt="Success Coaching" loading="lazy" />
+        <img src="image_04.png" alt="Canadian Settlement" loading="lazy" />
+        <img src="Image_05.png" alt="Mentorship Session" loading="lazy" />
+        <img src="image1.jpeg" alt="Immigration Guidance" loading="lazy" />
+        <img src="image2.jpeg" alt="Professional Strategy" loading="lazy" />
     </div>
   </section>
 
@@ -989,7 +988,7 @@
     (function() {
       // Hero carousel
       const heroImg = document.querySelector('.hero-card img');
-      const heroImages = ['image1.jpeg','image2.jpeg','image3.jpeg','image7.jpeg'];
+      const heroImages = ['Image_06.png','image1.jpeg','image2.jpeg','Image_05.png','image_04.png'];
       let hi = 0;
       if (heroImg) {
         heroImg.classList.add('fade-img');
@@ -1024,86 +1023,8 @@
   <script>
     AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic', offset: 120 });
   </script>
-  <!-- Video modal -->
-  <div id="videoModal" class="video-modal" aria-hidden="true">
-    <div class="video-modal-backdrop" data-action="close"></div>
-    <div class="video-modal-content" role="dialog" aria-modal="true" tabindex="-1">
-      <button class="video-modal-close" aria-label="Close video">✕</button>
-      <div id="videoModalPlayer" class="video-modal-player"></div>
-    </div>
-  </div>
-  <style>
-    .video-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:2000; }
-    .video-modal.show { display:flex; }
-    .video-modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.75); }
-    .video-modal-content { position:relative; width:92%; max-width:980px; background:transparent; border-radius:8px; z-index:2; }
-    .video-modal-player iframe, .video-modal-player video { width:100%; height:60vh; border-radius:6px; }
-    .video-modal-close { position:absolute; right:8px; top:8px; background:#111; color:#fff; border:0; padding:8px 10px; border-radius:20px; cursor:pointer; font-size:14px; z-index:3; }
-    @media (max-width:600px){ .video-modal-player iframe, .video-modal-player video { height:52vh; } }
-  </style>
-
-  <script>
-    (function(){
-      const videoMap = {
-        video1: 'https://www.youtube.com/embed/VIDEO_ID_1',
-        video2: 'https://www.youtube.com/embed/VIDEO_ID_2',
-        video3: 'https://www.youtube.com/embed/VIDEO_ID_3',
-      };
-
-      const modal = document.getElementById('videoModal');
-      const player = document.getElementById('videoModalPlayer');
-      const closeBtn = modal.querySelector('.video-modal-close');
-
-      let _lastFocus = null;
-      function openModal(key) {
-        const src = videoMap[key];
-        if (!src) return;
-        _lastFocus = document.activeElement;
-        player.innerHTML = '';
-        const iframe = document.createElement('iframe');
-        iframe.src = src + '?rel=0&autoplay=1';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        player.appendChild(iframe);
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden','false');
-        document.body.style.overflow = 'hidden';
-        // focus the modal content for keyboard users
-        const content = modal.querySelector('.video-modal-content');
-        const closeBtn = modal.querySelector('.video-modal-close');
-        if (closeBtn) closeBtn.focus();
-        if (content) content.focus();
-      }
-
-      function closeModal(){
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden','true');
-        player.innerHTML = '';
-        document.body.style.overflow = '';
-        if (_lastFocus && typeof _lastFocus.focus === 'function') _lastFocus.focus();
-        _lastFocus = null;
-      }
-
-      document.addEventListener('click', function(e){
-        const a = e.target.closest('.gallery-link');
-        if (!a) return;
-        e.preventDefault();
-        // href may be video.html#video1 or just a hash
-        const href = a.getAttribute('href') || '';
-        const hash = href.includes('#') ? href.split('#')[1] : a.dataset.video;
-        if (hash) openModal(hash);
-      });
-
-      modal.addEventListener('click', function(e){
-        if (e.target.dataset.action === 'close' || e.target === closeBtn) closeModal();
-      });
-
-      closeBtn.addEventListener('click', closeModal);
-      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
-    })();
-  </script>
   <!-- WhatsApp floating chat (original logo, no animation) -->
-  <a id="whatsappFloat" class="whatsapp-float" href="https://wa.me/13653845983?text=Hi%20Divine%2C%20I%27d%20like%20to%20book%20your%20drumming%20services.%20Please%20confirm%20availability." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a id="whatsappFloat" class="whatsapp-float" href="https://wa.me/13653845983?text=New%20Booking%20Request%3A..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M17.4 14.6c-.4-.2-2.36-1.16-2.72-1.28-.36-.12-.62-.18-.88.18-.24.36-.92 1.28-1.12 1.54-.2.24-.4.27-.76.09-.36-.18-1.52-.56-2.9-1.78-1.08-.96-1.8-2.14-2.02-2.5-.2-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.2.24-.36.36-.6.12-.24.06-.44-.02-.62-.08-.18-.88-2.12-1.2-2.9-.32-.78-.64-.67-.88-.68l-.76-.02c-.24 0-.62.09-.94.42-.3.3-1.16 1.14-1.16 2.76s1.19 3.22 1.36 3.44c.18.24 2.36 3.54 5.72 4.96 3.36 1.42 3.36.94 3.96.88.6-.06 1.92-.78 2.2-1.54.28-.76.28-1.4.2-1.54-.08-.12-.28-.18-.68-.36z" fill="#ffffff"/>
     </svg>
@@ -1114,14 +1035,6 @@
     /* no animation — consistent look on mobile & desktop */
     @media (prefers-reduced-motion: reduce){ .whatsapp-float { transition: none; } }
   </style>
-  <script>
-    try {
-      const wa = document.getElementById('whatsappFloat');
-      const consent = localStorage.getItem('analyticsConsent');
-      if (consent === 'granted' && wa) wa.style.display = 'flex';
-      window.addEventListener('storage', function(ev){ if (ev.key === 'analyticsConsent' && ev.newValue === 'granted' && wa) wa.style.display = 'flex'; });
-    } catch (e) {}
-  </script>
   <script>
     // Runtime clamp: detect any element wider than the viewport and force it to fit.
     (function(){

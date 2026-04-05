@@ -752,13 +752,11 @@
       </p>
 
       <div class="gallery-grid">
-        <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="Image_06.png" alt="Divine Emmanuel on yellow drum set" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video4" title="Watch video 4"><img src="Image_05.png" alt="Divine Emmanuel with cymbals display" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video5" title="Watch video 5"><img src="Image_02.png" alt="Professional portrait of Divine Emmanuel" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video6" title="Watch video 6"><img src="image_04.png" alt="Divine Emmanuel playing drums professionally" loading="lazy" /></a>
-        <a class="gallery-link" href="video.html#video7" title="Watch video 7"><img src="image9.png" alt="Divine Emmanuel playing drums professionally" loading="lazy" /></a>
+        <img src="Image_06.png" alt="Mentorship" loading="lazy" />
+        <img src="image1.jpeg" alt="Guidance" loading="lazy" />
+        <img src="image2.jpeg" alt="Professionalism" loading="lazy" />
+        <img src="Image_05.png" alt="Success Strategies" loading="lazy" />
+        <img src="image_04.png" alt="Coaching" loading="lazy" />
       </div>
     </div>
   </section>
@@ -926,7 +924,7 @@
     // Hero carousel + gallery fade-in for smoother mobile experience
     (function() {
       const heroImg = document.querySelector('.hero-card img');
-      const heroImages = ['image1.jpeg','image2.jpeg','image3.jpeg','image7.jpeg'];
+      const heroImages = ['Image_06.png','image1.jpeg','image2.jpeg','Image_05.png','image_04.png'];
       let hi = 0;
       if (heroImg) {
         heroImg.classList.add('fade-img');
@@ -959,83 +957,6 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic', offset: 120 });
-  </script>
-  <!-- Video modal -->
-  <div id="videoModal" class="video-modal" aria-hidden="true">
-    <div class="video-modal-backdrop" data-action="close"></div>
-    <div class="video-modal-content" role="dialog" aria-modal="true" tabindex="-1">
-      <button class="video-modal-close" aria-label="Close video">✕</button>
-      <div id="videoModalPlayer" class="video-modal-player"></div>
-    </div>
-  </div>
-  <style>
-    .video-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:2000; }
-    .video-modal.show { display:flex; }
-    .video-modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.75); }
-    .video-modal-content { position:relative; width:92%; max-width:980px; background:transparent; border-radius:8px; z-index:2; }
-    .video-modal-player iframe, .video-modal-player video { width:100%; height:60vh; border-radius:6px; }
-    .video-modal-close { position:absolute; right:8px; top:8px; background:#111; color:#fff; border:0; padding:8px 10px; border-radius:20px; cursor:pointer; font-size:14px; z-index:3; }
-    @media (max-width:600px){ .video-modal-player iframe, .video-modal-player video { height:52vh; } }
-  </style>
-
-  <script>
-    (function(){
-      const videoMap = {
-        video1: 'https://www.youtube.com/embed/VIDEO_ID_1',
-        video2: 'https://www.youtube.com/embed/VIDEO_ID_2',
-        video3: 'https://www.youtube.com/embed/VIDEO_ID_3',
-        video4: 'https://www.youtube.com/embed/VIDEO_ID_4',
-        video5: 'https://www.youtube.com/embed/VIDEO_ID_5',
-        video6: 'https://www.youtube.com/embed/VIDEO_ID_6'
-      };
-
-      const modal = document.getElementById('videoModal');
-      const player = document.getElementById('videoModalPlayer');
-      const closeBtn = modal.querySelector('.video-modal-close');
-
-      let _lastFocus = null;
-      function openModal(key) {
-        const src = videoMap[key];
-        if (!src) return;
-        _lastFocus = document.activeElement;
-        player.innerHTML = '';
-        const iframe = document.createElement('iframe');
-        iframe.src = src + '?rel=0&autoplay=1';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        player.appendChild(iframe);
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden','false');
-        document.body.style.overflow = 'hidden';
-        const closeBtn = modal.querySelector('.video-modal-close');
-        if (closeBtn) closeBtn.focus();
-      }
-
-      function closeModal(){
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden','true');
-        player.innerHTML = '';
-        document.body.style.overflow = '';
-        if (_lastFocus && typeof _lastFocus.focus === 'function') _lastFocus.focus();
-        _lastFocus = null;
-      }
-
-      document.addEventListener('click', function(e){
-        const a = e.target.closest('.gallery-link');
-        if (!a) return;
-        e.preventDefault();
-        const href = a.getAttribute('href') || '';
-        const hash = href.includes('#') ? href.split('#')[1] : a.dataset.video;
-        if (hash) openModal(hash);
-      });
-
-      modal.addEventListener('click', function(e){
-        if (e.target.dataset.action === 'close' || e.target === closeBtn) closeModal();
-      });
-
-      closeBtn.addEventListener('click', closeModal);
-      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
-    })();
   </script>
   <!-- WhatsApp floating chat (original logo, no animation) -->
   <a id="whatsappFloat" class="whatsapp-float" href="https://wa.me/13653845983?text=Hi%20Divine%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20Canadian%20success%20coaching%20and%20mentorship." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
