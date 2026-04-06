@@ -782,31 +782,31 @@
 
             <label class="sr-only" for="serviceType">Mentorship Type</label>
             <select id="serviceType" aria-label="Mentorship Type">
-              <option value="Settlement Coaching">Settlement Coaching</option>
-              <option value="Career Strategy">Career Strategy</option>
-              <option value="General Q&A">General Q&A</option>
-              <option value="Youth Mentorship">Youth Mentorship</option>
-              <option value="Success Coaching">Success Coaching</option>
+              <option value="Success Roadmap Strategy">Success Roadmap Strategy</option>
+              <option value="Career & Resume Mentorship">Career & Resume Mentorship</option>
+              <option value="Settlement & Lifestyle">Settlement & Lifestyle Coaching</option>
             </select>
 
-            <label class="sr-only" for="hours">Duration (Hours)</label>
-            <input type="number" id="hours" min="1" value="1" aria-label="Duration in hours" required />
+            <label class="sr-only" for="duration">Duration</label>
+            <select id="duration" aria-label="Duration" required>
+              <option value="30">30 Minutes ($40 CAD)</option>
+              <option value="60">60 Minutes ($70 CAD)</option>
+              <option value="90">90 Minutes ($100 CAD)</option>
+            </select>
             <label class="sr-only" for="message">Your Questions / Goals</label>
             <textarea id="message" placeholder="Tell me more about your goals or specific questions..." aria-label="Booking message"></textarea>
 
-            <div class="estimate-box" id="estimateBox">Estimated Total: $75</div>
+            <div class="estimate-box" id="estimateBox">Estimated Total: $40 CAD</div>
 
             <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;">
-              <button type="submit" class="btn btn-primary">Book Mentorship Session</button>
-              <button type="button" id="payButton" class="btn btn-primary">Book & Pay Now</button>
+              <button type="submit" class="btn btn-primary">Request via WhatsApp</button>
+              <button type="button" id="payButton" class="btn btn-primary">Pay via Card (Stripe)</button>
             </div>
           </form>
 
           <div class="rate-highlight">
-            <h3>Session Information</h3>
-            <p><strong>Hourly Rate:</strong> $75/hour</p>
-            <p><strong>Minimum Booking:</strong> 1 hour</p>
-            <p>Individualized sessions tailored to your unique Canadian journey.</p>
+            <h3>Legal Notice</h3>
+            <p>I am a success coach and mentor. I am <strong>not</strong> an immigration lawyer, authorized representative, or RCIC. I provide settlement strategy and lifestyle mentorship to help you prosper in Canada.</p>
           </div>
         </div>
 
@@ -844,19 +844,25 @@
   </footer>
 
   <script>
-    const hourlyRate = 75;
-    // Stripe Payment Link (created in your Stripe Dashboard)
-    const PAYMENT_LINK_URL = 'https://buy.stripe.com/5kQ9ASgRB19370v7O96c000';
+    // Updated Pricing for Coaching
+    const pricing = {
+      "30": 40,
+      "60": 70,
+      "90": 100
+    };
+    
+    // Stripe Payment Link (Stripe Dashboard)
+    const PAYMENT_LINK_URL = 'https://buy.stripe.com/bJedR88l5cRL3Oj0lH6c001';
 
-    const hoursInput = document.getElementById("hours");
+    const durationSelect = document.getElementById("duration");
     const estimateBox = document.getElementById("estimateBox");
     const bookingForm = document.getElementById("bookingForm");
     const payButton = document.getElementById('payButton');
 
     function updateEstimate() {
-      const hours = parseInt(hoursInput.value) || 1;
-      const total = hours * hourlyRate;
-      estimateBox.textContent = `Estimated Total: $${total}`;
+      const dur = durationSelect.value;
+      const total = pricing[dur] || 40;
+      estimateBox.textContent = `Estimated Total: $${total} CAD`;
     }
 
     function gatherBookingData() {
@@ -865,56 +871,47 @@
       const organization = document.getElementById("organization").value.trim();
       const date = document.getElementById("date").value;
       const serviceType = document.getElementById("serviceType").value;
-      const hours = parseInt(document.getElementById("hours").value) || 1;
+      const duration = durationSelect.value;
       const message = document.getElementById("message").value.trim();
-      const total = hours * hourlyRate;
+      const total = pricing[duration] || 40;
 
-      return { name, email, organization, date, serviceType, hours, message, total };
+      return { name, email, organization, date, serviceType, duration, message, total };
     }
 
-    hoursInput.addEventListener("input", updateEstimate);
+    durationSelect.addEventListener("change", updateEstimate);
 
     bookingForm.addEventListener("submit", function(e) {
       e.preventDefault();
       const data = gatherBookingData();
 
-      // Encode the booking details for the WhatsApp message
+      // Encode for WhatsApp
       const whatsappMessage = encodeURIComponent(
-        `New Mentorship Booking Request (Inside Page):\n\n` +
-        `Name: ${data.name}\n` +
+        `NEW MENTORSHIP REQUEST (Success Strategy)\n\n` +
+        `Client: ${data.name}\n` +
         `Email: ${data.email}\n` +
-        `Location/Country: ${data.organization || 'Not provided'}\n` +
-        `Date: ${data.date}\n` +
-        `Mentorship Type: ${data.serviceType}\n` +
-        `Duration: ${data.hours} Hour(s)\n` +
-        `Estimated Total: $${data.total}\n\n` +
-        `Goals/Questions: ${data.message || 'No additional questions'}`
+        `Location: ${data.organization || 'Not provided'}\n` +
+        `Service: ${data.serviceType}\n` +
+        `Duration: ${data.duration} Minutes\n` +
+        `Total: $${data.total} CAD\n` +
+        `Preferred Date: ${data.date}\n\n` +
+        `*Disclaimer Acknowledged (Not a Lawyer/RCIC)*\n\n` +
+        `Message: ${data.message || 'No additional questions'}`
       );
 
-      // WhatsApp number (from the contact section): +13653845983
       const whatsappNumber = "13653845983";
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-      // Open WhatsApp in a new tab
       window.open(whatsappUrl, '_blank');
-
-      // Clear the form
       bookingForm.reset();
-      document.getElementById("hours").value = 1;
       updateEstimate();
     });
 
     payButton.addEventListener('click', function(e) {
       e.preventDefault();
       const data = gatherBookingData();
-
       try {
         localStorage.setItem('pendingBooking', JSON.stringify(data));
-      } catch (err) {
-        // ignore storage errors
-      }
-
-      // Open the Stripe Payment Link in a new tab
+      } catch (err) {}
       window.open(PAYMENT_LINK_URL, '_blank');
     });
 
