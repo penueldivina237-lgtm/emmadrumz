@@ -940,8 +940,9 @@
 
           <label class="sr-only" for="serviceType">Session Type</label>
           <select id="serviceType" aria-label="Session Type" onchange="updateTotal()">
-            <option value="30-minute Coaching">30-Minute Intro ($40 CAD)</option>
-            <option value="1-hour Deep Dive">1-Hour Deep Dive ($70 CAD)</option>
+            <option value="30-minute Coaching">30 Minutes ($40 CAD)</option>
+            <option value="1-hour Deep Dive">60 Minutes ($70 CAD)</option>
+            <option value="Custom Duration">90 Minutes ($100 CAD)</option>
             <option value="Group Mentorship">Group Booking (Discounted)</option>
           </select>
 
@@ -999,7 +1000,8 @@
       
       let total = "";
       if (svc.includes("30")) total = "$40 CAD";
-      else if (svc.includes("1-hour")) total = "$70 CAD";
+      else if (svc.includes("60") || svc.includes("1-hour")) total = "$70 CAD";
+      else if (svc.includes("90")) total = "$100 CAD";
       else total = "Reduced Group Rate";
       
       totalCost.textContent = `Estimated Total: ${total}`;
