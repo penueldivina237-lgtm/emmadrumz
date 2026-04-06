@@ -721,23 +721,23 @@
     <div class="container">
       <h2 class="section-title">Coaching & Mentorship</h2>
       <p class="section-subtitle">
-        Tailored sessions for your Canadian journey. Choose the duration that fits your needs.
+        Accessible guidance for your Canadian journey. Choose the session that fits your goals.
       </p>
 
       <div class="services-grid">
         <div class="service-card">
-          <h3>30-Minute Intro Session</h3>
-          <p>Ideal for quick questions or a brief overview of your Canadian immigration goals. (50-70 CAD)</p>
+          <h3>30-Minute Discovery Session</h3>
+          <p>Ideal for quick questions or a brief overview of your Canadian immigration goals. (30-40 CAD)</p>
         </div>
 
         <div class="service-card">
           <h3>1-Hour Deep Dive</h3>
-          <p>A full hour focused on mapping out your settlement, education, or career strategy in Canada. (100 CAD)</p>
+          <p>A full hour focused on mapping out your settlement, education, or career strategy in Canada. (60-70 CAD)</p>
         </div>
 
         <div class="service-card">
           <h3>Group Sessions</h3>
-          <p>Invite friends or family! Discounted group rates available for 2 or more people. (Contact for pricing)</p>
+          <p>Invite friends or family! Discounted group rates available for 2 or more people. (Contact for best pricing)</p>
         </div>
       </div>
     </div>
@@ -793,26 +793,26 @@
 
   <section class="section-dark rate-section" data-aos="fade-left" data-aos-once="true">
     <div class="container">
-      <h2 class="section-title">Investment</h2>
+      <h2 class="section-title">Affordable Investment</h2>
       <p class="section-subtitle">
-        Choose your session type and book your path to success.
+        High-value coaching at rates tailored to support our global community.
       </p>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
         <div class="rate-box" style="padding: 24px; background: #191919; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
-          <h3>30 Minutes</h3>
-          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">$60 CAD</div>
+          <h3>35 Minutes</h3>
+          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">$40 CAD</div>
           <p class="rate-note">Perfect for initial questions.</p>
         </div>
         <div class="rate-box" style="padding: 24px; background: #191919; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.5); text-align: center;">
           <h3>1 Hour</h3>
-          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">$100 CAD</div>
-          <p class="rate-note">In-depth strategy & coaching.</p>
+          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">$70 CAD</div>
+          <p class="rate-note">In-depth strategy & roadmap.</p>
         </div>
         <div class="rate-box" style="padding: 24px; background: #191919; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
           <h3>Group Booking</h3>
-          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">Discounted</div>
-          <p class="rate-note">Per person rate (2+ people).</p>
+          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">Special Rate</div>
+          <p class="rate-note">Significant discounts for groups.</p>
         </div>
       </div>
     </div>
@@ -847,7 +847,7 @@
           </ul>
 
           <div class="flyer-rate">
-            <strong>Session Rate: $60+ CAD</strong><br />
+            <strong>Session Rate: $40+ CAD</strong><br />
             Personalized 1-on-1 Mentorship
           </div>
             <strong>Hourly Rate: $75/hour</strong><br />
@@ -922,8 +922,8 @@
 
           <label class="sr-only" for="serviceType">Session Type</label>
           <select id="serviceType" aria-label="Session Type" onchange="updateTotal()">
-            <option value="30-minute Coaching">30-Minute Intro ($60 CAD)</option>
-            <option value="1-hour Deep Dive">1-Hour Deep Dive ($100 CAD)</option>
+            <option value="30-minute Coaching">30-Minute Intro ($40 CAD)</option>
+            <option value="1-hour Deep Dive">1-Hour Deep Dive ($70 CAD)</option>
             <option value="Group Mentorship">Group Booking (Discounted)</option>
           </select>
 
@@ -935,7 +935,7 @@
           <label class="sr-only" for="message">Your Questions / Goals</label>
           <textarea id="message" placeholder="Briefly describe your goals or specific questions you have..." aria-label="Booking message"></textarea>
 
-          <div class="total" id="totalCost">Estimated Total: $60 CAD</div>
+          <div class="total" id="totalCost">Estimated Total: $40 CAD</div>
 
           <p style="font-size: 0.85rem; color: #d4af37; margin: 10px 0; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 10px;">
             <strong>Legal Disclaimer:</strong> I am not a lawyer or a licensed immigration consultant (RCIC). These sessions provide coaching and mentorship based on personal experience. For legal advice, consult a professional.
@@ -980,9 +980,9 @@
       groupField.style.display = svc === "Group Mentorship" ? "block" : "none";
       
       let total = "";
-      if (svc.includes("30")) total = "$60 CAD";
-      else if (svc.includes("1-hour")) total = "$100 CAD";
-      else total = "Discounted Group Rate";
+      if (svc.includes("30")) total = "$40 CAD";
+      else if (svc.includes("1-hour")) total = "$70 CAD";
+      else total = "Reduced Group Rate";
       
       totalCost.textContent = `Estimated Total: ${total}`;
     }
