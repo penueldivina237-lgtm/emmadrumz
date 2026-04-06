@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="google-site-verification" content="LrH62UdRRh0ovZXLa1EWnqJvcLH6HtuoTxYzcyQmW_g" />
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Divine Emmanuel | Canadian Immigration & Success Coach</title>
+  <title>Divine Emmanuel | Professional Drummer</title>
   <style>
     * {
       margin: 0;
@@ -12,22 +12,11 @@
       scroll-behavior: smooth;
     }
 
-    html, body {
-      /* enforce no horizontal scrolling (use !important to override any inline or external rules) */
-      overflow-x: hidden !important;
-      max-width: 100vw !important;
-      position: relative;
-    }
-
     body {
       font-family: Georgia, 'Times New Roman', serif;
       background: #0d0d0d;
       color: #f5f5f5;
       line-height: 1.6;
-      /* Prevent large horizontal drift on touch devices; allow vertical panning only */
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
-      touch-action: pan-y;
     }
 
     a {
@@ -41,10 +30,9 @@
     }
 
     .container {
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding-inline: 16px;
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
     }
 
     header {
@@ -92,7 +80,8 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      background: #0d0d0d;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.78)),
+        url('image2.jpg') center/cover no-repeat;
     }
 
     .hero::after {
@@ -101,8 +90,6 @@
       inset: 0;
       backdrop-filter: blur(6px);
       z-index: 0;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.78)),
-        url('image2.jpeg') center/cover no-repeat;
     }
 
     .hero-content {
@@ -276,9 +263,7 @@
       border: 1px solid #d4af37;
       border-radius: 10px;
       margin-top: 20px;
-      min-width: 0;
-      max-width: 100%;
-      box-sizing: border-box;
+      min-width: 300px;
     }
 
     .rate-box h3 {
@@ -541,7 +526,6 @@
       .booking-form input, .booking-form textarea, .booking-form select { padding: 12px; font-size: 0.95rem; }
       .gallery-grid img { height: auto; }
       .rate-price { font-size: 1.8rem; }
-      .rate-box { width: 100%; padding: 18px; }
     }
 
     /* Animation helpers */
@@ -572,12 +556,6 @@
     }
 
     .btn:active { transform: translateY(1px) scale(0.995); }
-  </style>
-  <style>
-    /* Mobile horizontal containment: ensure no side-to-side panning */
-    html, body { overflow-x: hidden !important; max-width:100vw !important; touch-action: pan-y !important; overscroll-behavior-x: none !important; }
-    img, iframe, video { max-width: 100vw !important; height: auto !important; }
-    .video-modal-content, .flyer-wrap, .gallery-grid { max-width: 100vw !important; }
   </style>
   <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -649,16 +627,13 @@
       <div class="brand">DIVINE EMMANUEL</div>
       <nav class="nav-links">
         <a href="#home">Home</a>
-         <a href="inside.html">Instant Booking</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#resources">Resources</a>
+        <a href="#tutors">Tutor</a>
         <a href="#flyer">Flyer</a>
-        <a href="#gallery">Gallery</a>
         <a href="#booking">Booking</a>
         <a href="#contact">Contact</a>
-    
+        <a href="inside.html">Inside</a>
       </nav>
     </div>
   </header>
@@ -666,23 +641,23 @@
   <section class="hero" id="home" data-aos="fade-left" data-aos-once="true">
     <div class="container hero-content">
       <div class="hero-text">
-        <h2>Success & Settlement Coach</h2>
-        <h1>Your Strategic Roadmap to Success in Canada 🇨🇦</h1>
+        <h2>Professional Drummer</h2>
+        <h1>Reliable Drumming Services for Churches, Events & Studio Sessions</h1>
         <p class="hero-full">
-          I am Divine Emmanuel, a dedicated mentor helping you navigate the practical side of your Canadian journey. From career strategies to settlement secrets, I offer personalized mentorship to help you transition smoothly and thrive in your new home.
+          I am Divine Emmanuel, a professional drummer based in Hamilton, Ontario,
+          Canada, with over 15 years of experience. I provide quality drumming
+          services for church services, rehearsals, worship gatherings, live events,
+          and studio sessions.
         </p>
-        <p style="font-size: 0.9rem; color: #d4af37; margin-bottom: 20px; padding: 10px; border: 1px solid rgba(212,175,55,0.3); border-radius: 6px; background: rgba(212,175,55,0.05);">
-          <strong>⚠️ Disclaimer:</strong> I am a Success Coach and Mentor; I am <strong>not</strong> a lawyer or a Regulated Canadian Immigration Consultant (RCIC). I provide coaching based on personal experience and research. I do not provide legal advice or application representation.
-        </p>
-        <p class="hero-brief" style="display:none;">Strategic mentorship for your Canadian settlement and success journey.</p>
+        <p class="hero-brief" style="display:none;">Professional drummer for church services, events, and studio sessions.</p>
         <div class="btn-group">
-          <a href="#booking" class="btn btn-primary">Book a Roadmap Session</a>
-          <a href="#services" class="btn btn-outline">Success Services</a>
+          <a href="#booking" class="btn btn-primary">Book My Service</a>
+          <a href="#flyer" class="btn btn-outline">View Flyer</a>
         </div>
       </div>
 
       <div class="hero-card">
-        <img src="image1.jpeg" alt="Divine Emmanuel Success Coach" loading="lazy" />
+        <img src="image1.jpeg" alt="Divine Emmanuel professional portrait" loading="lazy" />
       </div>
     </div>
   </section>
@@ -691,27 +666,28 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <p class="section-subtitle">
-        Dedicated to empowering individuals with the knowledge and tools needed to thrive in Canada.
+        Professional, dependable, and experienced drumming support for churches,
+        worship teams, event organizers, and music projects.
       </p>
 
       <div class="about-grid">
         <div class="about-box">
           <p>
-            I am a passionate coach with years of experience helping people navigate the Canadian immigration landscape. My goal is to simplify the transition process for newcomers through personalized mentorship and practical settlement tips.
+            I am a passionate drummer with over 15 years of experience serving in
+            church environments, live performances, rehearsals, and studio sessions.
           </p>
           <p>
-            Whether you're looking for guidance on moving, settlement strategies, or career success in Canada, I focus on providing reliable, research-backed support to help you achieve your goals.
+            My goal is to bring excellence, rhythm, energy, and musical sensitivity
+            to every assignment. Whether it is a worship service, music rehearsal,
+            conference, concert, or recording, I focus on delivering professional support.
           </p>
           <p>
-            I am committed to your success and offer coaching sessions designed to address your unique needs and challenges.
-          </p>
-          <p style="font-size: 0.85rem; border-top: 1px solid #d4af37; padding-top: 10px; margin-top: 15px;">
-            <strong>Important:</strong> My services are strictly educational and mentoring-based. I do not provide legal advice or represent clients in immigration matters.
+            I am available for bookings across Hamilton, Ontario, and surrounding areas.
           </p>
         </div>
 
         <div class="about-image">
-          <img src="image2.jpeg" alt="Divine Emmanuel Coaching" loading="lazy" />
+          <img src="image3.jpeg" alt="Divine Emmanuel playing drums" loading="lazy" />
         </div>
       </div>
     </div>
@@ -719,70 +695,90 @@
 
   <section id="services" data-aos="fade-left" data-aos-once="true">
     <div class="container">
-      <h2 class="section-title">Coaching & Mentorship</h2>
+      <h2 class="section-title">Services</h2>
       <p class="section-subtitle">
-        Accessible guidance for your Canadian journey. Choose the session that fits your goals.
+        Flexible drumming services tailored for churches, live events, rehearsals, and studio work.
       </p>
 
       <div class="services-grid">
         <div class="service-card">
-          <h3>30-Minute Discovery Session</h3>
-          <p>Ideal for quick questions or a brief overview of your Canadian immigration goals. (Begins at 40 CAD)</p>
+          <h3>Church Services</h3>
+          <p>
+            Available for Sunday services, midweek services, worship nights, revivals,
+            conferences, and special church programs.
+          </p>
         </div>
 
         <div class="service-card">
-          <h3>1-Hour Deep Dive</h3>
-          <p>A full hour focused on mapping out your settlement, education, or career strategy in Canada. (Begins at 70 CAD)</p>
-          <h3>Group Sessions</h3>
-          <p>Invite friends or family! Discounted group rates available for 2 or more people. (Contact for best pricing)</p>
+          <h3>Rehearsals</h3>
+          <p>
+            Available to rehearse with church bands, choirs, worship teams,
+            and music groups before services or events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Live Events</h3>
+          <p>
+            Professional drumming support for ceremonies, concerts, conventions,
+            worship programs, and special occasions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Studio Sessions</h3>
+          <p>
+            Session drumming for recordings, projects, live music preparation,
+            and other professional music needs.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Worship Gatherings</h3>
+          <p>
+            Excellent support for praise sessions, worship meetings,
+            church ministrations, and spiritual events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Special Bookings</h3>
+          <p>
+            Available for custom requests based on event type, duration,
+            location, and musical requirements.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-dark" id="testimonials" data-aos="fade-up">
+  <section id="tutors" class="section-dark" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title">Success Stories</h2>
-      <p class="section-subtitle">Real results from people who have navigated their journey with personalized coaching.</p>
-      
+      <h2 class="section-title">Professional Tutoring</h2>
+      <p class="section-subtitle">
+        Master your instrument with personalized 1-on-1 lessons tailored to your skill level and musical goals.
+      </p>
+
       <div class="services-grid">
-        <div class="service-card" style="border-top: 3px solid #d4af37;">
-          <p style="font-style: italic; color: #f5f5f5;">"The 1-hour strategy session was exactly what I needed. I felt overwhelmed by the process, but Divine broke it down into simple, actionable steps. Highly recommend!"</p>
-          <p style="margin-top: 15px; font-weight: bold; color: #d4af37;">- Sarah K., International Student</p>
+        <div class="service-card">
+          <h3>Drum Tutoring</h3>
+          <p>
+            Learn rhythm, technique, and pocket playing. Available for all ages and levels, from beginners to advanced worship drummers.
+          </p>
         </div>
-        <div class="service-card" style="border-top: 3px solid #d4af37;">
-          <p style="font-style: italic; color: #f5f5f5;">"Finally found someone who actually listens and provides practical advice based on real experience. The settlement tips saved me so much time and money."</p>
-          <p style="margin-top: 15px; font-weight: bold; color: #d4af37;">- David O., Tech Professional</p>
-        </div>
-        <div class="service-card" style="border-top: 3px solid #d4af37;">
-          <p style="font-style: italic; color: #f5f5f5;">"Great value. The group session for me and my partner was incredibly helpful for our dual-pathway planning. We now have a clear roadmap."</p>
-          <p style="margin-top: 15px; font-weight: bold; color: #d4af37;">- The Adebayos, Permanent Residents</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="resources" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title">Free Resources</h2>
-      <p class="section-subtitle">Trusted links and tools to help you get started on your own research.</p>
-      
-      <div class="about-grid">
-        <div class="about-box" style="border-left: 2px solid #d4af37;">
-          <h3 style="color: #d4af37; margin-bottom: 15px;">Official Links</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px;"><a href="https://www.canada.ca/en/services/immigration-citizenship.html" target="_blank" style="color: #f5f5f5; text-decoration: underline;">IRCC Official Website</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/works.html" target="_blank" style="color: #f5f5f5; text-decoration: underline;">Express Entry Tool</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.jobbank.gc.ca/home" target="_blank" style="color: #f5f5f5; text-decoration: underline;">Canada Job Bank</a></li>
-          </ul>
+        <div class="service-card">
+          <h3>Piano Tutoring</h3>
+          <p>
+            Understand chords, scales, and contemporary accompaniment. Perfect for those looking to play in church or for personal enjoyment.
+          </p>
         </div>
-        <div class="about-box" style="border-left: 2px solid #d4af37;">
-          <h3 style="color: #d4af37; margin-bottom: 15px;">Settlement Tools</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px;"><a href="https://www.cmhc-schl.gc.ca/en/consumers/renting-an-apartment" target="_blank" style="color: #f5f5f5; text-decoration: underline;">Housing Market Guide</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.canada.ca/en/financial-consumer-agency/services/financial-toolkit.html" target="_blank" style="color: #f5f5f5; text-decoration: underline;">Financial/Banking Toolkit</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/prepare-life-canada/prepare-arrive/pre-arrival-services.html" target="_blank" style="color: #f5f5f5; text-decoration: underline;">Pre-arrival Support</a></li>
-          </ul>
+
+        <div class="service-card">
+          <h3>Music Theory</h3>
+          <p>
+            Build a strong foundation in music notation, harmony, and ear training to excel on any instrument.
+          </p>
         </div>
       </div>
     </div>
@@ -790,27 +786,17 @@
 
   <section class="section-dark rate-section" data-aos="fade-left" data-aos-once="true">
     <div class="container">
-      <h2 class="section-title">Affordable Investment</h2>
+      <h2 class="section-title">Rates</h2>
       <p class="section-subtitle">
-        High-value coaching at rates starting from 40 CAD to support our global community.
+        Simple and professional pricing for bookings.
       </p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
-        <div class="rate-box" style="padding: 24px; background: #191919; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
-          <h3>30 Minutes</h3>
-          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">$40 CAD</div>
-          <p class="rate-note">Perfect for initial questions.</p>
-        </div>
-        <div class="rate-box" style="padding: 24px; background: #191919; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.5); text-align: center;">
-          <h3>1 Hour</h3>
-          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">$70 CAD</div>
-          <p class="rate-note">In-depth strategy & roadmap.</p>
-        </div>
-        <div class="rate-box" style="padding: 24px; background: #191919; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
-          <h3>Group Booking</h3>
-          <div class="rate-price" style="color: #d4af37; font-size: 1.8rem; margin: 10px 0;">Special Rate</div>
-          <p class="rate-note">Significant discounts for groups.</p>
-        </div>
+      <div class="rate-box">
+        <h3>Hourly Rate</h3>
+        <div class="rate-price">$75/hour</div>
+        <p class="rate-note">
+          Minimum booking: 2 hours. Travel or special event requirements may affect final pricing.
+        </p>
       </div>
     </div>
   </section>
@@ -828,26 +814,23 @@
         </div>
 
         <div class="flyer-text">
-          <div class="tag">Canadian Immigrant Success</div>
+          <div class="tag">15+ Years Experience</div>
           <h2>Divine Emmanuel</h2>
           <p>
-            Mentorship and coaching for aspiring immigrants, international students, and newcomers navigating their journey to success in Canada.
+            Professional drumming services for churches, worship teams, events,
+            and studio sessions in Hamilton, Ontario, Canada.
           </p>
 
           <ul class="flyer-list">
-            <li>Settlement Strategies</li>
-            <li>Career Guidance</li>
-            <li>Education Planning</li>
-            <li>Lifestyle Adjustment</li>
-            <li>Social Networking</li>
-            <li>Personal Success Tips</li>
+            <li>Church Services</li>
+            <li>Rehearsals</li>
+            <li>Worship Nights</li>
+            <li>Live Events</li>
+            <li>Studio Sessions</li>
+            <li>Special Programs</li>
           </ul>
 
           <div class="flyer-rate">
-            <strong>Monday – Friday</strong><br />
-            8:00 AM – 1:00 PM (Cameroon Time)<br />
-            <strong>Session Rate: $40+ CAD</strong>
-          </div>
             <strong>Hourly Rate: $75/hour</strong><br />
             Minimum Booking: 2 hours
           </div>
@@ -864,102 +847,59 @@
 
   <section id="gallery" class="section-dark" data-aos="fade-left" data-aos-once="true">
     <div class="container">
-      <h2 class="section-title">Your Journey to Canada 🇨🇦</h2>
+      <h2 class="section-title">Gallery</h2>
       <p class="section-subtitle">
-        Providing the clarity and support you need to make your Canadian dream a reality.
+        A few moments from my professional music journey.
       </p>
 
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="image2.jpeg" alt="Divine Emmanuel - Canadian Success Coach" loading="lazy" style="border: 2px solid #d4af37;" />
-        </div>
-        <div class="about-box">
-          <h3 style="color: #d4af37; margin-bottom: 15px;">Availability & Booking</h3>
-          <p>
-            I am available for mentorship sessions from <strong>Monday to Friday</strong>. To better serve my primary audience in <strong>Cameroon and West Africa</strong>, my sessions are scheduled during your peak daytime hours.
-          </p>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px; display: flex; align-items: center;">
-              <span style="font-size: 1.2rem; margin-right: 10px;">🕒</span>
-              <span><strong>Working Hours:</strong> 8:00 AM – 1:00 PM (Cameroon Time / WAT)</span>
-            </li>
-            <li style="margin-bottom: 10px; display: flex; align-items: center;">
-              <span style="font-size: 1.2rem; margin-right: 10px;">📅</span>
-              <span><strong>Days:</strong> Monday – Friday</span>
-            </li>
-          </ul>
-          <p style="font-size: 0.85rem; color: #d4af37; margin-top: 10px;">
-            <em>Note: Sessions are booked on a first-come, first-served basis within these daily hours.</em>
-          </p>
-          <h3 style="color: #d4af37; margin-top: 25px; margin-bottom: 15px;">Why Choose This Mentorship?</h3>
-          <p>
-            Navigating the path to Canada is more than just paperwork; it's about building a future. My coaching focuses on <strong>real-world integration</strong>, helping you bypass common mistakes and settle with confidence.
-          </p>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 12px; display: flex; align-items: center;">
-              <span style="font-size: 1.2rem; margin-right: 10px;">🍁</span> 
-              <span><strong>Tailored Strategy:</strong> No two journeys are the same. We map out a plan specific to your background.</span>
-            </li>
-            <li style="margin-bottom: 12px; display: flex; align-items: center;">
-              <span style="font-size: 1.2rem; margin-right: 10px;">🍁</span> 
-              <span><strong>Settlement Secrets:</strong> From credit scores to housing, learn what you need to know *before* you land.</span>
-            </li>
-            <li style="margin-bottom: 12px; display: flex; align-items: center;">
-              <span style="font-size: 1.2rem; margin-right: 10px;">🍁</span> 
-              <span><strong>Career Networking:</strong> Strategies to break into the Canadian job market and build professional circles.</span>
-            </li>
-          </ul>
-          <p style="margin-top: 20px; font-weight: bold; color: #d4af37;">
-            Your success in Canada is my priority. Let's make it happen together.
-          </p>
-        </div>
-      </div>
+      <div class="gallery-grid">
+        <img src="image2.jpeg" alt="Divine Emmanuel in drum store" loading="lazy" />
+        <img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" loading="lazy" />
+        <a class="gallery-link" href="video.html#video1" title="Watch video 1"><img src="image1.jpeg" alt="Formal portrait of Divine Emmanuel" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video2" title="Watch video 2"><img src="image2.jpeg" alt="Divine Emmanuel in drum store" loading="lazy" /></a>
+        <a class="gallery-link" href="video.html#video3" title="Watch video 3"><img src="image3.jpeg" alt="Divine Emmanuel at yellow drum set" loading="lazy" /></a>
     </div>
   </section>
 
   <section id="booking" data-aos="fade-left" data-aos-once="true">
     <div class="container">
-      <h2 class="section-title">Book your Success Roadmap</h2>
+      <h2 class="section-title">Book My Service</h2>
       <p class="section-subtitle">
-        Strategic mentorship available Monday – Friday, 8:00 AM to 1:00 PM Cameroon Time (WAT).
+        Submit your booking request below. Estimated cost updates automatically.
       </p>
 
       <div class="booking-box">
         <form class="booking-form" id="bookingForm">
           <label class="sr-only" for="name">Full name</label>
           <input type="text" id="name" placeholder="Full Name" aria-label="Full name" required />
-          
           <label class="sr-only" for="email">Email address</label>
           <input type="email" id="email" placeholder="Email Address" aria-label="Email address" required />
-          
-          <label class="sr-only" for="date">Preferred Date</label>
-          <input type="date" id="date" aria-label="Preferred Date" required />
+          <label class="sr-only" for="organization">Organization or event name</label>
+          <input type="text" id="organization" placeholder="Church / Organization / Event Name" aria-label="Organization or event name" />
+          <label class="sr-only" for="date">Booking date</label>
+          <input type="date" id="date" aria-label="Booking date" required />
 
-          <label class="sr-only" for="serviceType">Session Type</label>
-          <select id="serviceType" aria-label="Session Type" onchange="updateTotal()">
-            <option value="30-min Mentorship">30-Minute Success Intro ($40 CAD)</option>
-            <option value="60-min Strategy">60-Minute Deep Dive ($70 CAD)</option>
-            <option value="90-min Custom">90-Minute Custom Strategy ($100 CAD)</option>
-            <option value="Group Mentorship">Group Booking (Discounted)</option>
+            <label class="sr-only" for="serviceType">Service type</label>
+            <select id="serviceType" aria-label="Service type">
+            <option value="Church Service">Church Service</option>
+            <option value="Rehearsal">Rehearsal</option>
+            <option value="Live Event">Live Event</option>
+            <option value="Studio Session">Studio Session</option>
+            <option value="Drum Tutoring">Drum Tutoring</option>
+            <option value="Piano Tutoring">Piano Tutoring</option>
+            <option value="Special Booking">Special Booking</option>
           </select>
 
-          <div id="groupField" style="display:none; margin-bottom: 12px;">
-            <label class="sr-only" for="attendees">Number of Attendees</label>
-            <input type="number" id="attendees" min="2" placeholder="Number of Attendees" aria-label="Number of Attendees" />
-          </div>
+            <label class="sr-only" for="hours">Number of hours</label>
+            <input type="number" id="hours" min="2" value="2" aria-label="Number of hours" required />
+            <label class="sr-only" for="message">Booking message</label>
+            <textarea id="message" placeholder="Tell me about your event, rehearsal, or service..." aria-label="Booking message"></textarea>
 
-          <label class="sr-only" for="message">Your Primary Goals</label>
-          <textarea id="message" placeholder="Briefly describe what you'd like to achieve in this session (e.g. Job search, Housing, Credit Score)..." aria-label="Booking message"></textarea>
+          <div class="total" id="totalCost">Estimated Total: $150</div>
 
-          <div class="total" id="totalCost">Estimated Total: $40 CAD</div>
-
-          <p style="font-size: 0.85rem; color: #d4af37; margin: 15px 0; border: 1px solid rgba(212,175,55,0.3); padding: 12px; border-radius: 6px; background: rgba(0,0,0,0.2);">
-            <strong>⚠️ Legal Notice:</strong> By booking, you acknowledge that Divine Emmanuel is a Success Coach and Mentor. These sessions provide informational strategy and coaching based on experience and are <strong>NOT</strong> legal immigration advice. For legal representation or official visa advice, consult a licensed professional.
-          </p>
-
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
-            <button type="submit" class="btn btn-primary">Check Availability via WhatsApp</button>
-            <button type="button" id="payButton" class="btn btn-outline" style="border: 1px solid #d4af37; color: #d4af37;">Book & Pay Now</button>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;">
+            <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+            <button type="button" id="payButton" class="btn btn-primary">Book & Pay</button>
           </div>
         </form>
       </div>
@@ -972,81 +912,70 @@
       <p><strong>Email:</strong> divineemmanuel214@gmail.com</p>
       <p><strong>Phone / WhatsApp:</strong> +1 (365) 384-5983</p>
       <p><strong>Location:</strong> Hamilton, ON, Canada</p>
-      <p>Available for mentorship sessions and success coaching for newcomers and aspiring immigrants.</p>
+      <p>Available for bookings from churches, worship teams, event organizers, and artists.</p>
     </div>
   </section>
 
   <footer>
-    <div class="container" style="padding: 20px 0;">
-      <p>© 2026 Divine Emmanuel. All rights reserved.</p>
-      <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8; max-width: 800px; margin-left: auto; margin-right: auto;">
-        Divine Emmanuel is a Success & Settlement Coach. I am not a lawyer or an RCIC. My mentorship provides informational strategy and practical life/career guidance. For legal immigration advice, please consult official professionals.
-      </p>
+    <div class="container">
+      © 2026 Divine Emmanuel. All rights reserved.
     </div>
   </footer>
 
   <script>
-    const PAYMENT_LINK_URL = 'https://buy.stripe.com/bJedR88l5cRL3Oj0lH6c001';
+    const hourlyRate = 75;
+    // Stripe Payment Link (created in your Stripe Dashboard)
+    const PAYMENT_LINK_URL = 'https://buy.stripe.com/5kQ9ASgRB19370v7O96c000';
 
-    const serviceType = document.getElementById("serviceType");
+    const hoursInput = document.getElementById("hours");
     const totalCost = document.getElementById("totalCost");
     const bookingForm = document.getElementById("bookingForm");
     const payButton = document.getElementById('payButton');
-    const groupField = document.getElementById("groupField");
 
     function updateTotal() {
-      const svc = serviceType.value;
-      groupField.style.display = svc === "Group Mentorship" ? "block" : "none";
-      
-      let total = "";
-      if (svc.includes("30")) total = "$40 CAD";
-      else if (svc.includes("60") || svc.includes("1-hour")) total = "$70 CAD";
-      else if (svc.includes("90")) total = "$100 CAD";
-      else total = "Reduced Group Rate";
-      
-      totalCost.textContent = `Estimated Total: ${total}`;
+      const hours = parseInt(hoursInput.value) || 2;
+      const total = hours * hourlyRate;
+      totalCost.textContent = `Estimated Total: $${total}`;
     }
 
     function gatherBookingData() {
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
+      const organization = document.getElementById("organization").value.trim();
       const date = document.getElementById("date").value;
-      const svc = serviceType.value;
+      const serviceType = document.getElementById("serviceType").value;
+      const hours = parseInt(document.getElementById("hours").value) || 2;
       const message = document.getElementById("message").value.trim();
-      const attendees = document.getElementById("attendees").value;
-      const total = totalCost.textContent.replace("Estimated Total: ", "");
-      
-      return { name, email, date, svc, message, attendees, total };
+      const total = hours * hourlyRate;
+      return { name, email, organization, date, serviceType, hours, message, total };
     }
 
-    serviceType.addEventListener("change", updateTotal);
+    hoursInput.addEventListener("input", updateTotal);
 
     bookingForm.addEventListener("submit", function(e) {
       e.preventDefault();
       const data = gatherBookingData();
 
-      const whatsappMessage = encodeURIComponent(
-        `New Mentorship Request:\n\n` +
-        `Name: ${data.name}\n` +
-        `Email: ${data.email}\n` +
-        `Date: ${data.date}\n` +
-        `Session: ${data.svc}\n` +
-        `${data.attendees ? `Attendees: ${data.attendees}\n` : ''}` +
-        `Price: ${data.total}\n\n` +
-        `Goals: ${data.message || 'None'}\n\n` +
-        `*Disclaimer acknowledged: Not legal advice.*`
+      alert(
+        `Booking Request Submitted\n\nName: ${data.name}\nEmail: ${data.email}\nOrganization: ${data.organization}\nDate: ${data.date}\nService: ${data.serviceType}\nHours: ${data.hours}\nEstimated Total: $${data.total}\n\nMessage: ${data.message}`
       );
 
-      const whatsappNumber = "13653845983";
-      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
       bookingForm.reset();
+      document.getElementById("hours").value = 2;
       updateTotal();
     });
 
     payButton.addEventListener('click', function(e) {
       e.preventDefault();
       const data = gatherBookingData();
-      try { localStorage.setItem('pendingBooking', JSON.stringify(data)); } catch (err) {}
+
+      try {
+        localStorage.setItem('pendingBooking', JSON.stringify(data));
+      } catch (err) {
+        // ignore storage errors
+      }
+
+      // Open the Stripe Payment Link in a new tab
       window.open(PAYMENT_LINK_URL, '_blank');
     });
 
@@ -1057,19 +986,20 @@
     (function() {
       // Hero carousel
       const heroImg = document.querySelector('.hero-card img');
-      const heroImages = ['Image_06.png','image1.jpeg','image2.jpeg','Image_05.png','image_04.png'];
+      const heroImages = ['image1.jpeg','image2.jpeg','image3.jpeg','image7.jpeg'];
       let hi = 0;
       if (heroImg) {
         heroImg.classList.add('fade-img');
-        // Run a single, subtle hero image transition once on page entry
-        setTimeout(() => {
-          hi = (hi + 1) % heroImages.length;
+        setInterval(() => {
+          // only animate on small screens for performance
+          if (window.innerWidth > 1200) return;
           heroImg.classList.add('hidden');
           setTimeout(() => {
+            hi = (hi + 1) % heroImages.length;
             heroImg.src = heroImages[hi];
             heroImg.classList.remove('hidden');
-          }, 220);
-        }, 700);
+          }, 450);
+        }, 4500);
       }
 
       // Gallery fade-in using IntersectionObserver
@@ -1092,43 +1022,113 @@
   <script>
     AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic', offset: 120 });
   </script>
-  <!-- WhatsApp floating chat (original logo, no animation) -->
-  <a id="whatsappFloat" class="whatsapp-float" href="https://wa.me/13653845983?text=New%20Booking%20Request%3A..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M17.4 14.6c-.4-.2-2.36-1.16-2.72-1.28-.36-.12-.62-.18-.88.18-.24.36-.92 1.28-1.12 1.54-.2.24-.4.27-.76.09-.36-.18-1.52-.56-2.9-1.78-1.08-.96-1.8-2.14-2.02-2.5-.2-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.2.24-.36.36-.6.12-.24.06-.44-.02-.62-.08-.18-.88-2.12-1.2-2.9-.32-.78-.64-.67-.88-.68l-.76-.02c-.24 0-.62.09-.94.42-.3.3-1.16 1.14-1.16 2.76s1.19 3.22 1.36 3.44c.18.24 2.36 3.54 5.72 4.96 3.36 1.42 3.36.94 3.96.88.6-.06 1.92-.78 2.2-1.54.28-.76.28-1.4.2-1.54-.08-.12-.28-.18-.68-.36z" fill="#ffffff"/>
+  <!-- Video modal -->
+  <div id="videoModal" class="video-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-action="close"></div>
+    <div class="video-modal-content" role="dialog" aria-modal="true" tabindex="-1">
+      <button class="video-modal-close" aria-label="Close video">✕</button>
+      <div id="videoModalPlayer" class="video-modal-player"></div>
+    </div>
+  </div>
+  <style>
+    .video-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:2000; }
+    .video-modal.show { display:flex; }
+    .video-modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.75); }
+    .video-modal-content { position:relative; width:92%; max-width:980px; background:transparent; border-radius:8px; z-index:2; }
+    .video-modal-player iframe, .video-modal-player video { width:100%; height:60vh; border-radius:6px; }
+    .video-modal-close { position:absolute; right:-6px; top:-28px; background:#111; color:#fff; border:0; padding:8px 10px; border-radius:20px; cursor:pointer; font-size:14px; z-index:3; }
+    @media (max-width:600px){ .video-modal-player iframe, .video-modal-player video { height:52vh; } }
+  </style>
+
+  <script>
+    (function(){
+      const videoMap = {
+        video1: 'https://www.youtube.com/embed/VIDEO_ID_1',
+        video2: 'https://www.youtube.com/embed/VIDEO_ID_2',
+        video3: 'https://www.youtube.com/embed/VIDEO_ID_3',
+      };
+
+      const modal = document.getElementById('videoModal');
+      const player = document.getElementById('videoModalPlayer');
+      const closeBtn = modal.querySelector('.video-modal-close');
+
+      let _lastFocus = null;
+      function openModal(key) {
+        const src = videoMap[key];
+        if (!src) return;
+        _lastFocus = document.activeElement;
+        player.innerHTML = '';
+        const iframe = document.createElement('iframe');
+        iframe.src = src + '?rel=0&autoplay=1';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        player.appendChild(iframe);
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+        // focus the modal content for keyboard users
+        const content = modal.querySelector('.video-modal-content');
+        const closeBtn = modal.querySelector('.video-modal-close');
+        if (closeBtn) closeBtn.focus();
+        if (content) content.focus();
+      }
+
+      function closeModal(){
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden','true');
+        player.innerHTML = '';
+        document.body.style.overflow = '';
+        if (_lastFocus && typeof _lastFocus.focus === 'function') _lastFocus.focus();
+        _lastFocus = null;
+      }
+
+      document.addEventListener('click', function(e){
+        const a = e.target.closest('.gallery-link');
+        if (!a) return;
+        e.preventDefault();
+        // href may be video.html#video1 or just a hash
+        const href = a.getAttribute('href') || '';
+        const hash = href.includes('#') ? href.split('#')[1] : a.dataset.video;
+        if (hash) openModal(hash);
+      });
+
+      modal.addEventListener('click', function(e){
+        if (e.target.dataset.action === 'close' || e.target === closeBtn) closeModal();
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
+  <!-- WhatsApp floating chat (click to open WhatsApp Web / app) -->
+  <a id="whatsappFloat" class="whatsapp-float" href="https://wa.me/13653845983?text=Hi%20Divine%2C%20I%27m%20interested%20in%20booking" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 .5 4.873.5 11.5c0 2.02.53 3.93 1.53 5.62L0 24l6.07-1.6A11.9 11.9 0 0012 23.5c6.627 0 11.5-4.873 11.5-11.5 0-3.07-1.2-5.88-3.98-8.52z" fill="#25D366"/>
+      <path d="M17.4 14.6c-.4-.2-2.36-1.16-2.72-1.28-.36-.12-.62-.18-.88.18-.24.36-.92 1.28-1.12 1.54-.2.24-.4.27-.76.09-.36-.18-1.52-.56-2.9-1.78-1.08-.96-1.8-2.14-2.02-2.5-.2-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.2.24-.36.36-.6.12-.24.06-.44-.02-.62-.08-.18-.88-2.12-1.2-2.9-.32-.78-.64-.67-.88-.68l-.76-.02c-.24 0-.62.09-.94.42-.3.3-1.16 1.14-1.16 2.76s1.19 3.22 1.36 3.44c.18.24 2.36 3.54 5.72 4.96 3.36 1.42 3.36.94 3.96.88.6-.06 1.92-.78 2.2-1.54.28-.76.28-1.4.2-1.54-.08-.12-.28-.18-.68-.36z" fill="#fff"/>
     </svg>
   </a>
   <style>
-    .whatsapp-float { position:fixed; right:18px; bottom:18px; width:96px; height:96px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#25D366; box-shadow:0 12px 30px rgba(0,0,0,0.18); z-index:4000; text-decoration:none; }
-    .whatsapp-float svg { width:64px; height:64px; display:block; }
-    /* no animation — consistent look on mobile & desktop */
-    @media (prefers-reduced-motion: reduce){ .whatsapp-float { transition: none; } }
+    .whatsapp-float { position:fixed; right:16px; bottom:16px; background:#25D366; width:60px; height:60px; display:flex; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 10px 30px rgba(37,211,102,0.22); z-index:4000; text-decoration:none; border:4px solid rgba(255,255,255,0.06); }
+    .whatsapp-float svg { display:block; width:28px; height:28px; }
+    .whatsapp-float svg * { fill: #fff !important; }
+
+    /* pulsing ring */
+    .whatsapp-float::before{ content:''; position:absolute; right:10px; bottom:10px; width:76px; height:76px; border-radius:50%; background:rgba(37,211,102,0.14); z-index:3998; animation: wa-pulse 1.8s infinite; }
+    @keyframes wa-pulse{ 0%{transform:scale(0.9);opacity:0.6}50%{transform:scale(1.18);opacity:0.18}100%{transform:scale(0.9);opacity:0.6}}
+
+    /* subtle vibration */
+    @keyframes wa-vibrate{ 0%{transform:translateX(0)}20%{transform:translateX(-1.8px)}40%{transform:translateX(1.8px)}60%{transform:translateX(-1.2px)}80%{transform:translateX(1.2px)}100%{transform:translateX(0)} }
+    .whatsapp-float > svg { animation: wa-vibrate 1.6s infinite; }
+
+    @media (prefers-reduced-motion: reduce){ .whatsapp-float::before, .whatsapp-float > svg { animation:none; } }
   </style>
   <script>
-    // Runtime clamp: detect any element wider than the viewport and force it to fit.
-    (function(){
-      function clampOverflow() {
-        try {
-          document.documentElement.style.overflowX = 'hidden';
-          document.body.style.overflowX = 'hidden';
-          const ww = window.innerWidth || document.documentElement.clientWidth;
-          Array.from(document.querySelectorAll('*')).forEach(el => {
-            if (!(el instanceof HTMLElement)) return;
-            const ow = el.offsetWidth;
-            if (ow > ww) {
-              el.style.maxWidth = '100%';
-              el.style.width = '100%';
-              el.style.overflowX = 'hidden';
-              el.style.boxSizing = 'border-box';
-            }
-          });
-        } catch (e) {}
-      }
-      window.addEventListener('load', clampOverflow, { passive: true });
-      window.addEventListener('resize', clampOverflow, { passive: true });
-      // run early in case DOM already loaded
-      setTimeout(clampOverflow, 120);
-    })();
+    try {
+      const wa = document.getElementById('whatsappFloat');
+      const consent = localStorage.getItem('analyticsConsent');
+      if (consent === 'granted' && wa) wa.style.display = 'flex';
+      window.addEventListener('storage', function(ev){ if (ev.key === 'analyticsConsent' && ev.newValue === 'granted' && wa) wa.style.display = 'flex'; });
+    } catch (e) {}
   </script>
 </body>
 </html>

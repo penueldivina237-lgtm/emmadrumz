@@ -1,32 +1,30 @@
-# Canada Success Roadmap — Coaching & Mentorship by Divine Emmanuel
+# Drumming Site — Divine Emmanuel
 
-This repository contains the official website for **Divine Emmanuel**, a Success & Settlement Coach helping individuals transition successfully to life in Canada.
+This repository contains a static front-end (`index.html`, `inside.html`, assets) and a minimal Node server (`server/`) to handle bookings and Stripe Checkout webhooks.
 
-## Professional Focus
-This project has pivoted from a drumming service to a professional mentorship portal. It provides:
-- **Success Roadmap Strategies**: Personalized settlement planning.
-- **Career Mentorship**: Resume optimization and Canadian job market strategy.
-- **Lifestyle Transition Coaching**: Cultural integration and community building.
+Structure
+- `index.html`, `inside.html` — front-end booking pages
+- `booking-success.html` — post-checkout success page
+- `server/` — Node/Express server scaffold (bookings storage, Checkout session creation, webhook, README)
 
-## ⚠️ Legal Disclaimer
-Divine Emmanuel is a Success Coach and Mentor. He is **NOT** a Regulated Canadian Immigration Consultant (RCIC), a lawyer, or an authorized representative of the IRCC. 
-- He does **not** provide legal advice.
-- He does **not** represent clients in immigration proceedings.
-- All services are for educational and mentorship purposes only.
+Quick start (local)
+1. Serve the static site from `drum_web` root (example):
 
-## Structure
-- [index.html](index.html): Main landing page with the Success Roadmap booking funnel.
-- [inside.html](inside.html): Premium detailed booking and visual showcase page.
-- [booking-success.html](booking-success.html): Post-payment confirmation page.
+```bash
+cd drum_web
+python3 -m http.server 5500
+```
 
-## Deployment
-The site is deployed via GitHub Pages. 
-To update the live site, simply push changes to the `main` branch.
+2. Start the server for bookings/webhooks:
 
-**Live Site:** [https://penueldivina237-lgtm.github.io/emmadrumz/](https://penueldivina237-lgtm.github.io/emmadrumz/)
-*(Note: Link will update if repository is renamed)*
+```bash
+cd drum_web/server
+npm install
+cp .env.example .env   # edit with real values
+npm start
+```
 
-## Contact & Bookings
-- **WhatsApp**: +1 (365) 384-5983
-- **Stripe**: Integrated for secure card payments.
-- **Schedule**: Optimized for West Africa Time (WAT) 8 AM - 1 PM (Mon-Fri).
+3. Configure Stripe webhook (see `server/README.md`) and set `DOMAIN` to your site origin.
+
+Deploy
+- Push this repository to GitHub and enable GitHub Pages (Settings → Pages) for the `main` branch or `/docs` folder.
